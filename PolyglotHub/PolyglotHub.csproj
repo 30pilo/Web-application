@@ -155,6 +155,7 @@
     <Content Include="Default.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="SignUpPage.aspx" />
+    <Content Include="AdminLoginPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="SignUpPage.aspx.designer.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginPage.aspx.cs">
+      <DependentUpon>AdminLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLoginPage.aspx.designer.cs">
+      <DependentUpon>AdminLoginPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

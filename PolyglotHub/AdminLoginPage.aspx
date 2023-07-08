@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="PolyglotHub.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="AdminLoginPage.aspx.cs" Inherits="PolyglotHub.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto"> <!--Take 6 column and center it-->
@@ -20,7 +21,7 @@
                             <div class="col">
                                 <center>
                                     <h1 class="h1-login-card-text">Polyglot Hub <br />
-                                        Login
+                                        Admin Login
                                     </h1>
                                 </center>
                             </div>
@@ -34,7 +35,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <label>User Username</label>
+                                <label>Admin Username</label>
                                 <div class="form-group">  
                                     <asp:TextBox  class="form-control" ID="TextBox1" 
                                         placeholder="Username" runat="server">
@@ -60,18 +61,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <a href="Default.aspx">Forgot your password?</a>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <a href="AdminLoginPage.aspx">Admin Login Here >></a>
-                        </div>
-                    </div>
-                </div>
-                <br /><br /><br /><br /><br /><br />
+
+                <br /><br /><br /><br /><br /><br /><br />
             </div>
         </div>
     </div>
+
 </asp:Content>
