@@ -6,6 +6,7 @@
         color: #884A39;
     }
 
+
 #footer1 {
     background: #DFAE65;
 }
@@ -60,3 +61,16 @@
         .navbar .navbar-nav .nav-item:hover::after {
             width:100%;
         }
+
+.h1-login-card-text {
+    font-family: Lexend Deca;
+    color: #884A39;
+}
+
+.custom-hr {
+    border: none; 
+    height: 1px; 
+    background-color: black; 
+}
+
+
