@@ -10,7 +10,7 @@
 
 namespace PolyglotHub
 {
-    public partial class _Default
+    public partial class WebForm1
     {
     }
 }

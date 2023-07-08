@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="PolyglotHub.Layout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+        crossorigin="anonymous">
+    <link href="css/customstylesheet.css" rel="stylesheet" /> <!--Custom CSS-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>   
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+                <a class="navbar-brand" href="#">
+                    <img src="img/HeaderLogo.png" width="149" height="55"/>
+                </a>   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link active custom-links" href="homepage.aspx">Home</a>
+                        </li> 
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link custom-links dropdown-toggle" href="#" role="button" 
+                                data-bs-hover="dropdown" aria-expanded="false">Lessons</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Beginner</a></li>
+                                <li><a class="dropdown-item" href="#">Intermediate</a></li>
+                                <li><a class="dropdown-item" href="#">Advanced</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link custom-links" href="#">Grammar</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link custom-links" href="#">Sample Test</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link custom-links" href="#">More</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link custom-links" ID="LinkButton4" runat="server">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link custom-links" ID="LinkButton3" runat="server">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link custom-links" ID="LinkButton1" runat="server">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link custom-links" ID="LinkButton2" runat="server">Hello User</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Content -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server">About Us</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Forum</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server">Vocabulary</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Contact Us</asp:LinkButton>
+                            &nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color:whitesmoke">
+                            &copy 2023 Polyglot Hub. All right Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

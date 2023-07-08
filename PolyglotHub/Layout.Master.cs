@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PolyglotHub
 {
-    public partial class SiteMaster : MasterPage
+    public partial class Layout : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
