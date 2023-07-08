@@ -58,19 +58,19 @@
 
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <a href="Default.aspx">Forgot your password?</a>
+                        <div class="container">
+                            <div class="login-text-footer">
+                                <div style="flex:1">
+                                    <a href="Default.aspx">Forgot your password?</a>
+                                </div>
+                                <div>
+                                    <a href="AdminLoginPage.aspx">Admin Login Here >></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-right">
-                            <a href="AdminLoginPage.aspx">Admin Login Here >></a>
-                        </div>
+
                     </div>
-                </div>
-                <br /><br /><br /><br /><br /><br />
+                </div>    
             </div>
         </div>
     </div>

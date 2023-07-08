@@ -53,16 +53,11 @@
                                     <asp:Button ID="Button1" runat="server" Text="Login" class="btn btn-success btn-block btn-lg" />
                                 </div>
 
-                                <div class="form-group"> 
-                                    <a href="SignUpPage.aspx"><input id="Button2" type="button" value="Register" class="btn btn-info btn-block btn-lg" /></a>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <br /><br /><br /><br /><br /><br /><br />
             </div>
         </div>
     </div>
