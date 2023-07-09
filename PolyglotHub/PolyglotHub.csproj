@@ -162,6 +162,9 @@
     <Content Include="SignUpPage.aspx" />
     <Content Include="AdminLoginPage.aspx" />
     <Content Include="UserProfilePage.aspx" />
+    <Content Include="AdminLessonManagement.aspx" />
+    <Content Include="AdminLessonContent.aspx" />
+    <Content Include="WebForm8.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -259,6 +262,27 @@
     </Compile>
     <Compile Include="UserProfilePage.aspx.designer.cs">
       <DependentUpon>UserProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLessonManagement.aspx.cs">
+      <DependentUpon>AdminLessonManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLessonManagement.aspx.designer.cs">
+      <DependentUpon>AdminLessonManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLessonContent.aspx.cs">
+      <DependentUpon>AdminLessonContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLessonContent.aspx.designer.cs">
+      <DependentUpon>AdminLessonContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm8.aspx.cs">
+      <DependentUpon>WebForm8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm8.aspx.designer.cs">
+      <DependentUpon>WebForm8.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
