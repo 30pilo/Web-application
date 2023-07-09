@@ -91,13 +91,21 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server">About Us</asp:LinkButton>
+                            <a class="footerlinks" href="#">About us</a>
+                            <a class="footerlinks" href="#">Vocabulary</a>
+                            <a class="footerlinks" href="#">Forum</a>
+                            <a class="footerlinks" href="#">Contact us</a>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server">Lesson Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Forum</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Grammar Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server">Vocabulary</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server">Questions Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Contact Us</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Vocabulary Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server">Forum Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Member Management</asp:LinkButton>
                             &nbsp;
                         </p>
                     </div>

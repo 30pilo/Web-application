@@ -105,6 +105,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PolyglotHubDB.mdf" />
+    <Content Include="App_Data\PolyglotHubDB_log.ldf">
+      <DependentUpon>PolyglotHubDB.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap-grid.css" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="bootstrap\css\bootstrap-reboot.css" />
@@ -151,11 +155,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="img\profpic.png" />
+    <Content Include="img\UserProfileLessonHistoryIconnobg.png" />
     <Content Include="Layout.Master" />
     <Content Include="Default.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="SignUpPage.aspx" />
     <Content Include="AdminLoginPage.aspx" />
+    <Content Include="UserProfilePage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -247,10 +253,15 @@
     <Compile Include="AdminLoginPage.aspx.designer.cs">
       <DependentUpon>AdminLoginPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserProfilePage.aspx.cs">
+      <DependentUpon>UserProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfilePage.aspx.designer.cs">
+      <DependentUpon>UserProfilePage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

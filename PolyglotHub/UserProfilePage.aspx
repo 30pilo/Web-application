@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="SignUpPage.aspx.cs" Inherits="PolyglotHub.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="UserProfilePage.aspx.cs" Inherits="PolyglotHub.WebForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto"> <!--Take 8 column and center it-->
+            <div class="col-md-8 mx-auto"> <!--Take 8 column-->
                 <br /> <br />
                 <div class="card">
                     <div class="card-body">
@@ -20,9 +20,11 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h3 class="h1-login-card-text">Polyglot Hub <br />
-                                        User Sign Up
-                                    </h3>
+                                    <h4 class="h1-login-card-text">
+                                        Your Profile
+                                    </h4>
+                                    <span>Account Status - </span>
+                                    <asp:Label ID="Label1" class="badge badge-pill badge-info" runat="server" Text="[Your Status]"></asp:Label>
                                 </center>
                             </div>
                         </div>
@@ -88,46 +90,103 @@
 
                         <div class="row">
                             <div class="col">
-                                <label>Username</label>
+                                <label>Date Joined</label>
                                 <div class="form-group">  
                                     <asp:TextBox  class="form-control" ID="TextBox1" 
-                                        placeholder="Username" runat="server">
+                                        placeholder="dd-mm-yyyy" runat="server">
                                     </asp:TextBox>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
-                                <label>Password</label>
+                            <div class="col-md-4">
+                                <label>Username</label>
                                 <div class="form-group"> 
                                     <asp:TextBox  class="form-control" ID="TextBox2" 
-                                        placeholder="Your Password Here" runat="server" TextMode="Password">
+                                        placeholder="Current Username" runat="server" TextMode="Password" ReadOnly="True">
                                     </asp:TextBox>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <label>Verify Password</label>
+                            <div class="col-md-4">
+                                <label>Current Password</label>
                                 <div class="form-group"> 
                                     <asp:TextBox  class="form-control" ID="TextBox6" 
-                                        placeholder="Re-enter Your Password" runat="server" TextMode="Password">
+                                        placeholder="Current Password" runat="server" TextMode="Password" ReadOnly="True">
+                                    </asp:TextBox>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>New Password</label>
+                                <div class="form-group"> 
+                                    <asp:TextBox  class="form-control" ID="TextBox7" 
+                                        placeholder="Change Your Password." runat="server" TextMode="Password">
                                     </asp:TextBox>
                                 </div>
                             </div>
                             
                         </div>
 
-                        <div class="form-group"> 
-                            <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-success btn-block btn-lg" />
+                        <div class="row">
+                            <div class="col-8 mx-auto">
+                                <div class="form-group"> 
+                                    <center>
+                                        <asp:Button ID="Button1" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
+                                    </center>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="login-text-footer">
+                            <br />
+                            <a style="flex:1" href="LoginPage.aspx"><< Start Learning!</a>
+                            <a href="#">Vocabulary List >></a>
+                            <br />
+                        </div>
+
                     </div>
                 </div>
-                <center>
-                    <br />
-                    <a href="LoginPage.aspx">Already a Member?</a>
-                    <br />
-                </center>
-            </div>
+                <br /> <br />
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <img src="img/UserProfileLessonHistoryIconnobg.png" width="240" height="210"/>
+                                </center>  
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <h4 class="h1-login-card-text">
+                                        Last Attempt on Test
+                                    </h4>
+                                    <asp:Label ID="Label2" class="badge badge-pill badge-info" runat="server" Text="Your Activity Info"></asp:Label>
+                                </center>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <hr class="custom-hr" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <asp:GridView class="table table-striped table-bordered" 
+                                    ID="GridView1" runat="server"></asp:GridView>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                       
+            </div>   
         </div>
     </div>
 
