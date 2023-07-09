@@ -164,7 +164,7 @@
     <Content Include="UserProfilePage.aspx" />
     <Content Include="AdminLessonManagement.aspx" />
     <Content Include="AdminGrammarManagement.aspx" />
-    <Content Include="WebForm8.aspx" />
+    <Content Include="AdminMemberManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -277,12 +277,12 @@
     <Compile Include="AdminGrammarManagement.aspx.designer.cs">
       <DependentUpon>AdminGrammarManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm8.aspx.cs">
-      <DependentUpon>WebForm8.aspx</DependentUpon>
+    <Compile Include="AdminMemberManagement.aspx.cs">
+      <DependentUpon>AdminMemberManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm8.aspx.designer.cs">
-      <DependentUpon>WebForm8.aspx</DependentUpon>
+    <Compile Include="AdminMemberManagement.aspx.designer.cs">
+      <DependentUpon>AdminMemberManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
