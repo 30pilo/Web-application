@@ -166,6 +166,8 @@
     <Content Include="AdminGrammarManagement.aspx" />
     <Content Include="AdminMemberManagement.aspx" />
     <Content Include="AdminVocabularyManagement.aspx" />
+    <Content Include="AdminTestManagement.aspx" />
+    <Content Include="AdminQuestionManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -291,6 +293,20 @@
     </Compile>
     <Compile Include="AdminVocabularyManagement.aspx.designer.cs">
       <DependentUpon>AdminVocabularyManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTestManagement.aspx.cs">
+      <DependentUpon>AdminTestManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminTestManagement.aspx.designer.cs">
+      <DependentUpon>AdminTestManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminQuestionManagement.aspx.cs">
+      <DependentUpon>AdminQuestionManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminQuestionManagement.aspx.designer.cs">
+      <DependentUpon>AdminQuestionManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

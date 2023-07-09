@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link active custom-links" href="homepage.aspx">Home</a>
+                            <a class="nav-link active custom-links" href="Default.aspx">Home</a>
                         </li> 
                         <li class="nav-item active dropdown">
                             <a class="nav-link custom-links dropdown-toggle" href="#" role="button" 
@@ -95,9 +95,11 @@
                             <a class="footerlinks" href="#">Vocabulary</a>
                             <a class="footerlinks" href="#">Forum</a>
                             <a class="footerlinks" href="#">Contact us</a>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server">Lesson Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Lesson Management</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Grammar Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Grammar Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Test Management</asp:LinkButton>
                             &nbsp;
                             <asp:LinkButton class="footerlinks" ID="LinkButton7" runat="server">Questions Management</asp:LinkButton>
                             &nbsp;

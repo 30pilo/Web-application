@@ -13,5 +13,15 @@ namespace PolyglotHub
         {
 
         }
+
+        protected void LinkButton5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminLessonManagement.aspx");
+        }
+
+        protected void LinkButton6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminGrammarManagement.aspx");
+        }
     }
 }
