@@ -165,6 +165,7 @@
     <Content Include="AdminLessonManagement.aspx" />
     <Content Include="AdminGrammarManagement.aspx" />
     <Content Include="AdminMemberManagement.aspx" />
+    <Content Include="AdminVocabularyManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -283,6 +284,13 @@
     </Compile>
     <Compile Include="AdminMemberManagement.aspx.designer.cs">
       <DependentUpon>AdminMemberManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVocabularyManagement.aspx.cs">
+      <DependentUpon>AdminVocabularyManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminVocabularyManagement.aspx.designer.cs">
+      <DependentUpon>AdminVocabularyManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
