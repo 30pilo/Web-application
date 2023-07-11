@@ -47,9 +47,12 @@
                                         placeholder="Your Password Here" runat="server" TextMode="Password">
                                     </asp:TextBox>
                                 </div>
+                                
+                                <asp:Label ID="errLabel1" runat="server" Text="errLabel" Visible="False" ForeColor="Red"></asp:Label>
+          
 
                                 <div class="form-group"> 
-                                    <asp:Button ID="Button1" runat="server" Text="Login" class="btn btn-success btn-block btn-lg" />
+                                    <asp:Button ID="Button1" runat="server" Text="Login" class="btn btn-success btn-block btn-lg" OnClick="Button1_Click" />
                                 </div>
 
                                 <div class="form-group"> 
