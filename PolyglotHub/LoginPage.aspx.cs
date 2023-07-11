@@ -37,7 +37,12 @@ namespace PolyglotHub
                 {
                     while(dr.Read())
                     {
-                        Response.Write("<script>alert('Login Success!'); window.location='LoginPage.aspx';</script>"); //  if all condition are true
+                        Response.Write("<script>alert('Login Success!'); window.location='Default.aspx';</script>"); //  if all condition are true
+                        Session["username"] = dr.GetValue(1).ToString();
+                        Session["firstname"] = dr.GetValue(3).ToString();
+                        Session["lastname"] = dr.GetValue(4).ToString();
+                        Session["role"] = "Member";
+                        Session["status"] = dr.GetValue(7).ToString();
                     }
                 } else
                 {

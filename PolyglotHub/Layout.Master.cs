@@ -11,7 +11,63 @@ namespace PolyglotHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if(Session["role"] ==  null)
+                {
+                    Session["role"] = "Guest";
+                }
+                if (Session["role"].Equals("Guest")) // If no user login
+                {
+                    LinkButton4.Visible = true; // Login Button
+                    LinkButton3.Visible = true; // Sign Up Button
 
+                    LinkButton1.Visible = false; // Log Out
+                    LinkButton2.Visible = false; // Hello User
+                    LinkButton5.Visible = false; // Admin lesson
+                    LinkButton6.Visible = false; // Admin Grammaar
+                    LinkButton7.Visible = false; // Admin Question
+                    LinkButton8.Visible = false; // Admin Vocab
+                    LinkButton9.Visible = false; // Admin Forum
+                    LinkButton10.Visible = false; // Admin Member
+                    LinkButton11.Visible = false; // Admin Test
+                } else if(Session["role"].Equals("Member"))
+                {
+                    LinkButton4.Visible = false; // Login Button
+                    LinkButton3.Visible = false; // Sign Up Button
+
+                    LinkButton1.Visible = true; // Log Out
+                    LinkButton2.Visible = true; // Hello User
+                    LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
+
+                    LinkButton5.Visible = false; // Admin lesson
+                    LinkButton6.Visible = false; // Admin Grammaar
+                    LinkButton7.Visible = false; // Admin Question
+                    LinkButton8.Visible = false; // Admin Vocab
+                    LinkButton9.Visible = false; // Admin Forum
+                    LinkButton10.Visible = false; // Admin Member
+                    LinkButton11.Visible = false; // Admin Test
+                } else if(Session["role"].Equals("Admin"))
+                {
+                    LinkButton4.Visible = false; // Login Button
+                    LinkButton3.Visible = false; // Sign Up Button
+
+                    LinkButton1.Visible = true; // Log Out
+                    LinkButton2.Visible = true; // Hello User
+                    LinkButton2.Text = "Hello Admin " + Session["username"].ToString();
+
+                    LinkButton5.Visible = true; // Admin lesson
+                    LinkButton6.Visible = true; // Admin Grammaar
+                    LinkButton7.Visible = true; // Admin Question
+                    LinkButton8.Visible = true; // Admin Vocab
+                    LinkButton9.Visible = true; // Admin Forum
+                    LinkButton10.Visible = true; // Admin Member
+                    LinkButton11.Visible = true; // Admin Test
+                }
+            } catch (Exception ex)
+            {
+                
+            }   
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
