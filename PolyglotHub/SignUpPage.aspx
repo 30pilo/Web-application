@@ -38,8 +38,11 @@
                                 <label>First Name</label>
                                 <div class="form-group">  
                                     <asp:TextBox  class="form-control" ID="TextBox3" 
-                                        placeholder="First Name" runat="server">
+                                        placeholder="First Name" runat="server" ValidationGroup="1">
                                     </asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                        ErrorMessage="Required Field*" Display="Dynamic" ControlToValidate="TextBox3" ForeColor="Red" ValidationGroup="1">
+                                    </asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -53,16 +56,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col">
-                                <label>Email</label>
-                                <div class="form-group">  
-                                    <asp:TextBox  class="form-control" ID="TextBox5" 
-                                        placeholder="Email Here" runat="server" TextMode="Email">
-                                    </asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="col">
@@ -82,6 +75,7 @@
                                         <asp:ListItem Text="Vietnam" Value="Vietnam"></asp:ListItem>
                                         <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:Label ID="errLabel3" runat="server" Text="errLabel3" ForeColor="Red" Visible="False"></asp:Label>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +85,12 @@
                                 <label>Username</label>
                                 <div class="form-group">  
                                     <asp:TextBox  class="form-control" ID="TextBox1" 
-                                        placeholder="Username" runat="server">
+                                        placeholder="Username" runat="server" ValidationGroup="2">
                                     </asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                        ErrorMessage="Required Field*" Display="Dynamic" ControlToValidate="TextBox1" ForeColor="Red" ValidationGroup="2">
+                                    </asp:RequiredFieldValidator>
+                                    <asp:Label ID="errLabel1" runat="server" Text="errLabel1" Visible="False" ForeColor="Red"></asp:Label>
                                 </div>
                             </div>
                         </div>
@@ -102,23 +100,37 @@
                                 <label>Password</label>
                                 <div class="form-group"> 
                                     <asp:TextBox  class="form-control" ID="TextBox2" 
-                                        placeholder="Your Password Here" runat="server" TextMode="Password">
+                                        placeholder="Password is < 20 Alphanumerics Characters" runat="server" TextMode="Password" ValidationGroup="3">
                                     </asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                        ErrorMessage="Required Field*" Display="Dynamic" ControlToValidate="TextBox2" ForeColor="Red" ValidationGroup="3">
+                                    </asp:RequiredFieldValidator>
                                 </div>
+                                
+                                
                             </div>
                             <div class="col-md-6">
                                 <label>Verify Password</label>
                                 <div class="form-group"> 
                                     <asp:TextBox  class="form-control" ID="TextBox6" 
-                                        placeholder="Re-enter Your Password" runat="server" TextMode="Password">
+                                        placeholder="Re-enter Your Password" runat="server" TextMode="Password" ValidationGroup="4">
                                     </asp:TextBox>
-                                </div>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                        ErrorMessage="Required Field*" Display="Dynamic" ControlToValidate="TextBox6" ForeColor="Red" ValidationGroup="4">
+                                    </asp:RequiredFieldValidator>
+                                    <asp:CompareValidator runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox6"
+                ErrorMessage="Passwords do not match." ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
+                                </div>   
                             </div>
-                            
+                        </div>
+                        <div class ="row">
+                            <div class="col-md-4">
+                                <asp:Label ID="errLabel2" runat="server" Text="errLabel2" ForeColor="Red" Visible="False"></asp:Label>
+                            </div>
                         </div>
 
                         <div class="form-group"> 
-                            <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-success btn-block btn-lg" />
+                            <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Submit" class="btn btn-success btn-block btn-lg" />
                         </div>
                     </div>
                 </div>

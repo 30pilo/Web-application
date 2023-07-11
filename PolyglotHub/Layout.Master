@@ -81,6 +81,7 @@
             </nav>
         </div>
         <!-- Content -->
+
         <div style="flex:1">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

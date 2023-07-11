@@ -46,19 +46,16 @@ namespace PolyglotHub
 
         protected void LinkButton11_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Test11");
             Response.Redirect("AdminTestManagement.aspx");
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("Test4");
+        {            
             Response.Redirect("LoginPage.aspx");
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Test3");
             Response.Redirect("SignUpPage.aspx");
         }
     }
