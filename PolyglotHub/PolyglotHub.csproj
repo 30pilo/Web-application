@@ -129,6 +129,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\customstylesheet.css" />
+    <Content Include="css\customJS.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -168,6 +169,9 @@
     <Content Include="AdminVocabularyManagement.aspx" />
     <Content Include="AdminTestManagement.aspx" />
     <Content Include="AdminQuestionManagement.aspx" />
+    <Content Include="WebForm12.aspx" />
+    <Content Include="VocabularyPage.aspx" />
+    <Content Include="AdminLvlManage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -307,6 +311,27 @@
     </Compile>
     <Compile Include="AdminQuestionManagement.aspx.designer.cs">
       <DependentUpon>AdminQuestionManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm12.aspx.cs">
+      <DependentUpon>WebForm12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm12.aspx.designer.cs">
+      <DependentUpon>WebForm12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VocabularyPage.aspx.cs">
+      <DependentUpon>VocabularyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VocabularyPage.aspx.designer.cs">
+      <DependentUpon>VocabularyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLvlManage.aspx.cs">
+      <DependentUpon>AdminLvlManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLvlManage.aspx.designer.cs">
+      <DependentUpon>AdminLvlManage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -13,7 +13,7 @@ namespace PolyglotHub
         {
             try
             {
-                if(Session["role"] ==  null)
+                if(Session["role"] ==  null || Session["role"].Equals(""))
                 {
                     Session["role"] = "Guest";
                 }
@@ -24,8 +24,7 @@ namespace PolyglotHub
 
                     LinkButton1.Visible = false; // Log Out
                     LinkButton2.Visible = false; // Hello User
-                    LinkButton5.Visible = false; // Admin lesson
-                    LinkButton6.Visible = false; // Admin Grammaar
+                    LinkButton5.Visible = false; // Admin Level
                     LinkButton7.Visible = false; // Admin Question
                     LinkButton8.Visible = false; // Admin Vocab
                     LinkButton9.Visible = false; // Admin Forum
@@ -40,8 +39,7 @@ namespace PolyglotHub
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
 
-                    LinkButton5.Visible = false; // Admin lesson
-                    LinkButton6.Visible = false; // Admin Grammaar
+                    LinkButton5.Visible = false; // Admin Level
                     LinkButton7.Visible = false; // Admin Question
                     LinkButton8.Visible = false; // Admin Vocab
                     LinkButton9.Visible = false; // Admin Forum
@@ -56,8 +54,7 @@ namespace PolyglotHub
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello Admin " + Session["username"].ToString();
 
-                    LinkButton5.Visible = true; // Admin lesson
-                    LinkButton6.Visible = true; // Admin Grammaar
+                    LinkButton5.Visible = true; // Admin Level
                     LinkButton7.Visible = true; // Admin Question
                     LinkButton8.Visible = true; // Admin Vocab
                     LinkButton9.Visible = true; // Admin Forum
@@ -66,19 +63,39 @@ namespace PolyglotHub
                 }
             } catch (Exception ex)
             {
-                
+                Response.Write("<script> alert('" + ex.Message + "'); </script>");
             }   
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session["username"] = "";
+            Session["firstname"] = "";
+            Session["lastname"] = "";
+            Session["role"] = "";
+            Session["status"] = "";
+
+
+            LinkButton4.Visible = true; // Login Button
+            LinkButton3.Visible = true; // Sign Up Button
+
+            LinkButton1.Visible = false; // Log Out
+            LinkButton2.Visible = false; // Hello User
+            LinkButton5.Visible = false; // Admin Level
+            LinkButton7.Visible = false; // Admin Question
+            LinkButton8.Visible = false; // Admin Vocab
+            LinkButton9.Visible = false; // Admin Forum
+            LinkButton10.Visible = false; // Admin Member
+            LinkButton11.Visible = false; // Admin Test
+
+            Response.Redirect("LoginPage.aspx");
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminLessonManagement.aspx");
+            Response.Redirect("AdminLvlManage.aspx");
         }
 
-        protected void LinkButton6_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AdminGrammarManagement.aspx");
-        }
 
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
