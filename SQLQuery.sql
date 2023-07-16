@@ -84,6 +84,26 @@ CREATE TABLE [dbo].[GrammarContent] (
 );
 
 
+INSERT INTO [dbo].[GrammarContent] ([SubHeading],[Content],[Grammar_Id])
+VALUES ('SH1','CT1',1);
+
+INSERT INTO [dbo].[GrammarContent] ([SubHeading],[Content],[Grammar_Id])
+VALUES ('SH2','CT2',2);
+
+INSERT INTO [dbo].[GrammarTable] ([Chinese_Title],[English_Title],[Level_Id])
+VALUES ('Title2','Text2',1);
+
+INSERT INTO [dbo].[GrammarTable] ([Chinese_Title],[English_Title],[Level_Id])
+VALUES ('Title3','Text3',2);
+
+INSERT INTO [dbo].[GrammarTable] ([Chinese_Title],[English_Title],[Level_Id])
+VALUES ('Title4','Text4',1);
+
+SELECT * FROM GrammarTable
+
+SELECT * FROM GrammarContent
+
+
 
 INSERT INTO [dbo].[LessonLevelTable] ([Name], [Lesson_Id])
 VALUES ('Lesson Level 1', 3);

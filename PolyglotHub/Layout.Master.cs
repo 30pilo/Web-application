@@ -13,7 +13,7 @@ namespace PolyglotHub
         {
             try
             {
-                if(Session["role"] ==  null || Session["role"].Equals(""))
+                if (Session["role"] == null || Session["role"].Equals(""))
                 {
                     Session["role"] = "Guest";
                 }
@@ -22,6 +22,8 @@ namespace PolyglotHub
                     LinkButton4.Visible = true; // Login Button
                     LinkButton3.Visible = true; // Sign Up Button
 
+                    LinkButton12.Visible = false; // Grammar
+                    LinkButton6.Visible = false; // Sample Test
                     LinkButton1.Visible = false; // Log Out
                     LinkButton2.Visible = false; // Hello User
                     LinkButton5.Visible = false; // Admin Level
@@ -30,22 +32,27 @@ namespace PolyglotHub
                     LinkButton9.Visible = false; // Admin Forum
                     LinkButton10.Visible = false; // Admin Member
                     LinkButton11.Visible = false; // Admin Test
-                } else if(Session["role"].Equals("Member"))
+                }
+                else if (Session["role"].Equals("Member") && Session["status"].Equals("Active"))
                 {
                     LinkButton4.Visible = false; // Login Button
                     LinkButton3.Visible = false; // Sign Up Button
 
+                    
                     LinkButton1.Visible = true; // Log Out
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
 
+                    LinkButton12.Visible = true; // Grammar
+                    LinkButton6.Visible = true; // Sample Test
                     LinkButton5.Visible = false; // Admin Level
                     LinkButton7.Visible = false; // Admin Question
                     LinkButton8.Visible = false; // Admin Vocab
                     LinkButton9.Visible = false; // Admin Forum
                     LinkButton10.Visible = false; // Admin Member
                     LinkButton11.Visible = false; // Admin Test
-                } else if(Session["role"].Equals("Admin"))
+                }
+                else if (Session["role"].Equals("Admin"))
                 {
                     LinkButton4.Visible = false; // Login Button
                     LinkButton3.Visible = false; // Sign Up Button
@@ -54,17 +61,24 @@ namespace PolyglotHub
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello Admin " + Session["username"].ToString();
 
+                    LinkButton12.Visible = true; // Grammar
+                    LinkButton6.Visible = true; // Sample Test
                     LinkButton5.Visible = true; // Admin Level
                     LinkButton7.Visible = true; // Admin Question
                     LinkButton8.Visible = true; // Admin Vocab
                     LinkButton9.Visible = true; // Admin Forum
                     LinkButton10.Visible = true; // Admin Member
                     LinkButton11.Visible = true; // Admin Test
+                } else if (Session["role"].Equals("Member") && Session["status"].Equals("Inactive"))
+                {
+                    Response.Write("<script> alert('Account Status is Disabled! " +
+                        "Contact Admin for further Assitance'); </script>");
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Response.Write("<script> alert('" + ex.Message + "'); </script>");
-            }   
+            }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
@@ -123,13 +137,25 @@ namespace PolyglotHub
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e)
-        {            
+        {
             Response.Redirect("LoginPage.aspx");
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
             Response.Redirect("SignUpPage.aspx");
+        }
+
+        bool checkIfUserLogIn()
+        {
+            if (Session["role"].Equals("Admin") || Session["role"].Equals("Member"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

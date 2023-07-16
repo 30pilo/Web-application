@@ -53,17 +53,22 @@
                             </ul>
                         </li>
                         <li class="nav-item active dropdown">
-                            <a class="nav-link custom-links dropdown-toggle" href="#" role="button" 
-                                data-bs-hover="dropdown" aria-expanded="false">Grammar</a>
+                            <asp:LinkButton ID="LinkButton12" class="nav-link custom-links dropdown-toggle" 
+                                role="button" data-bs-hover="dropdown" runat="server" aria-expanded="false">
+                                Grammar
+                            </asp:LinkButton>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Beginner</a></li>
-                                <li><a class="dropdown-item" href="#">Intermediate</a></li>
-                                <li><a class="dropdown-item" href="#">Advanced</a></li>
+                                <li><a class="dropdown-item" href="Grammar_BeginnerPage">Beginner</a></li>
+                                <li><a class="dropdown-item" href="Grammar_IntermediatePage">Intermediate</a></li>
+                                <li><a class="dropdown-item" href="Grammar_AdvancedPage">Advanced</a></li>
                             </ul>
                         </li>
                         <li class="nav-item active dropdown">
-                            <a class="nav-link custom-links dropdown-toggle" href="#" role="button" 
-                                data-bs-hover="dropdown" aria-expanded="false">Sample Test</a>
+                            <asp:LinkButton ID="LinkButton6" class="nav-link custom-links dropdown-toggle" 
+                                role="button" data-bs-hover="dropdown" runat="server" aria-expanded="false">
+                                Sample Test
+                            </asp:LinkButton>
+
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Beginner</a></li>
                                 <li><a class="dropdown-item" href="#">Intermediate</a></li>
