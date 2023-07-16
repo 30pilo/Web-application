@@ -29,13 +29,21 @@ CREATE TABLE [dbo].[LessonTable] (
     [Lesson_Id]     INT            IDENTITY (1, 1) NOT NULL,
     [English_Title] NVARCHAR (MAX) NOT NULL,
     [Chinese_Title] NVARCHAR (MAX) NOT NULL,
-    [LessonImage]      IMAGE   NOT NULL,
+    [LessonImage]      VARCHAR (MAX)   NOT NULL,
     [Level_Id] INT NOT NULL, 
     PRIMARY KEY CLUSTERED ([Lesson_Id] ASC),
     FOREIGN KEY ([Level_Id]) 
         REFERENCES [dbo].[LevelTable] ([Level_Id]) 
         ON DELETE CASCADE
 );
+
+INSERT INTO LessonTable ([English_Title],[Chinese_Title],[LessonImage],[Level_Id]) VALUES ('english',N'中文','~/Lesson_Img/What is your favorite food.jpg',1);
+DELETE FROM LessonTable WHERE Lesson_Id = 1;
+
+SELECT * FROM LessonTable
+SELECT * FROM LevelTable
+SELECT * FROM AdminTable
+
 
 DROP TABLE [dbo].[LessonContent]
 DROP TABLE [dbo].[LessonTable]
@@ -83,3 +91,5 @@ VALUES ('Lesson Level 1', 3);
 SELECT * FROM LessonTable
 
 SELECT * FROM LevelTable
+
+

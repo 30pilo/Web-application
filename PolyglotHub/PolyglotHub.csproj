@@ -159,6 +159,17 @@
     <Content Include="img\UserProfileLessonHistoryIconnobg.png" />
     <Content Include="Layout.Master" />
     <Content Include="Default.aspx" />
+    <Content Include="Lesson_Img\Everyday Conversation Expressions.jpg" />
+    <Content Include="Lesson_Img\Exploring Chinese Vocabulary for Seasons and Weather.jpg" />
+    <Content Include="Lesson_Img\Exploring Chinese-Speaking Cultures and Customs.jpg" />
+    <Content Include="Lesson_Img\How many white color do we have.jpg" />
+    <Content Include="Lesson_Img\Mastering Chinese Numerals and Counting.jpg" />
+    <Content Include="Lesson_Img\Ordering Food.jpg" />
+    <Content Include="Lesson_Img\Travel Phrases and Expressions.jpg" />
+    <Content Include="Lesson_Img\Useful Phrases and Vocabulary for Shopping.jpg" />
+    <Content Include="Lesson_Img\UserProfileLessonHistoryIconnobg.png" />
+    <Content Include="Lesson_Img\What do you do.jpg" />
+    <Content Include="Lesson_Img\What is your favorite food.jpg" />
     <Content Include="LoginPage.aspx" />
     <Content Include="SignUpPage.aspx" />
     <Content Include="AdminLoginPage.aspx" />
@@ -169,7 +180,6 @@
     <Content Include="AdminVocabularyManagement.aspx" />
     <Content Include="AdminTestManagement.aspx" />
     <Content Include="AdminQuestionManagement.aspx" />
-    <Content Include="WebForm12.aspx" />
     <Content Include="VocabularyPage.aspx" />
     <Content Include="AdminLvlManage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -311,13 +321,6 @@
     </Compile>
     <Compile Include="AdminQuestionManagement.aspx.designer.cs">
       <DependentUpon>AdminQuestionManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm12.aspx.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm12.aspx.designer.cs">
-      <DependentUpon>WebForm12.aspx</DependentUpon>
     </Compile>
     <Compile Include="VocabularyPage.aspx.cs">
       <DependentUpon>VocabularyPage.aspx</DependentUpon>
