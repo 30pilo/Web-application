@@ -12,20 +12,20 @@ using System.IO;
 
 namespace PolyglotHub
 {
-    public partial class WebForm12 : System.Web.UI.Page
+    public partial class WebForm17 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 try
                 {
                     using (SqlConnection connection = new SqlConnection(strcon))
                     {
                         connection.Open();
-                        using (SqlCommand command = new SqlCommand("SELECT * FROM GrammarTable WHERE Level_Id = 1", connection))
+
+                        using (SqlCommand command = new SqlCommand("SELECT * FROM LessonTable WHERE Level_Id = 1", connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             {
@@ -33,12 +33,19 @@ namespace PolyglotHub
                                 {
                                     string title = reader["Chinese_Title"].ToString();
                                     string text = reader["English_Title"].ToString();
-                                    Session["GrammarID"] = reader["Grammar_Id"].ToString();
+                                    string filepath = reader["LessonImage"].ToString();
+                                    Session["LessonID"] = reader["Lesson_Id"].ToString();
 
                                     // Create a new card and populate it with the retrieved data
                                     var card = new HtmlGenericControl("div");
                                     card.Attributes.Add("class", "card");
                                     card.Attributes.Add("style", "width:20em; margin:10px;");
+
+                                    var imageElement = new HtmlImage();
+                                    imageElement.Src = filepath; // Set the source path of your image
+                                    imageElement.Attributes.Add("class", "card-image img-fluid"); // Add any additional attributes as needed
+                                    imageElement.Style["height"] = "200px"; // Set the desired height
+                                    card.Controls.Add(imageElement);
 
                                     var titleElement = new HtmlGenericControl("h2");
                                     titleElement.InnerText = title;
@@ -50,7 +57,7 @@ namespace PolyglotHub
 
                                     var readMoreLink = new HtmlAnchor();
                                     readMoreLink.InnerText = "Read More..";
-                                    readMoreLink.HRef = "GrammarContent.aspx?GrammarId=" + Session["GrammarID"]; // Include GrammarId in the URL
+                                    readMoreLink.HRef = "LessonContent.aspx?LessonID=" + Session["LessonID"];
                                     readMoreLink.Attributes.Add("class", "btn btn-primary");
                                     card.Controls.Add(readMoreLink);
 

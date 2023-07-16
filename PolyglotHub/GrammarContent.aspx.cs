@@ -25,22 +25,11 @@ namespace PolyglotHub
 
                         int GID = 1;
 
-                        /*
-                        if(Session["GrammarID"]!=null)
-                        {
-                            GID = Convert.ToInt32(Session["GrammarID"].ToString());
-                        } else
-                        {
-                            Response.Write("<script>alert('"+GID+"');</script>");
-                        }
-                        Response.Write("<script>alert('" + GID + "');</script>");*/
-
                         if (Request.QueryString["GrammarID"] != null)
                         {
                             string grammarId = Request.QueryString["GrammarID"];
                             GID = Convert.ToInt32(grammarId);
                         }
-                        Response.Write("<script>alert('" + GID + "');</script>");
 
                         using (SqlCommand command = new SqlCommand("SELECT SubHeading, Content FROM GrammarContent WHERE Grammar_Id = '"+ GID +"'", connection))
                         {

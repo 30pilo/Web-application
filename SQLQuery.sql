@@ -83,6 +83,17 @@ CREATE TABLE [dbo].[GrammarContent] (
         ON DELETE CASCADE
 );
 
+INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
+VALUES (N'我 叫 孙','wo jiao sun','CH2',2);
+
+INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
+VALUES (N'我 叫 孙','wo jiao sun','CH3',5);
+
+INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
+VALUES (N'我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙','wo jiao sun','CH4',3);
+
+SELECT * FROM LessonContent
+
 
 INSERT INTO [dbo].[GrammarContent] ([SubHeading],[Content],[Grammar_Id])
 VALUES ('SH1','CT1',1);

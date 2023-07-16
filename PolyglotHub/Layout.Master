@@ -44,13 +44,7 @@
                             <a class="nav-link active custom-links" href="Default.aspx">Home</a>
                         </li> 
                         <li class="nav-item active dropdown">
-                            <a class="nav-link custom-links dropdown-toggle" href="#" role="button" 
-                                data-bs-hover="dropdown" aria-expanded="false">Lessons</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Beginner</a></li>
-                                <li><a class="dropdown-item" href="#">Intermediate</a></li>
-                                <li><a class="dropdown-item" href="#">Advanced</a></li>
-                            </ul>
+                            <a class="nav-link custom-links" href="LessonPage.aspx">Lessons</a>
                         </li>
                         <li class="nav-item active dropdown">
                             <asp:LinkButton ID="LinkButton12" class="nav-link custom-links dropdown-toggle" 
