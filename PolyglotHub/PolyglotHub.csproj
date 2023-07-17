@@ -128,8 +128,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\AboutUsCss.css" />
+    <Content Include="css\ContactUsCss.css" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="css\customJS.js" />
+    <Content Include="css\ForumCss.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -191,6 +194,11 @@
     <Content Include="LessonPage.aspx" />
     <Content Include="Lesson_BeginnerPage.aspx" />
     <Content Include="LessonContent.aspx" />
+    <Content Include="SampleTestPage.aspx" />
+    <Content Include="TestQuestionPage.aspx" />
+    <Content Include="ForumPage.aspx" />
+    <Content Include="AboutUsPage.aspx" />
+    <Content Include="ContactUsPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -379,6 +387,41 @@
     </Compile>
     <Compile Include="LessonContent.aspx.designer.cs">
       <DependentUpon>LessonContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleTestPage.aspx.cs">
+      <DependentUpon>SampleTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleTestPage.aspx.designer.cs">
+      <DependentUpon>SampleTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestQuestionPage.aspx.cs">
+      <DependentUpon>TestQuestionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestQuestionPage.aspx.designer.cs">
+      <DependentUpon>TestQuestionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumPage.aspx.cs">
+      <DependentUpon>ForumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumPage.aspx.designer.cs">
+      <DependentUpon>ForumPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsPage.aspx.cs">
+      <DependentUpon>AboutUsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUsPage.aspx.designer.cs">
+      <DependentUpon>AboutUsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUsPage.aspx.cs">
+      <DependentUpon>ContactUsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUsPage.aspx.designer.cs">
+      <DependentUpon>ContactUsPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

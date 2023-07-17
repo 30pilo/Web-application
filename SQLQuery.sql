@@ -83,23 +83,93 @@ CREATE TABLE [dbo].[GrammarContent] (
         ON DELETE CASCADE
 );
 
-INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
-VALUES (N'我 叫 孙','wo jiao sun','CH2',2);
 
-INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
-VALUES (N'我 叫 孙','wo jiao sun','CH3',5);
+CREATE TABLE [dbo].[QuestionTable] (
+    [Question_Id] INT IDENTITY (1,1) NOT NULL,
+    [Content] NVARCHAR (MAX) NOT NULL,
+    [FirstChoice] NVARCHAR (MAX) NOT NULL,
+    [SecondChoice] NVARCHAR (MAX) NOT NULL,
+    [ThirdChoice] NVARCHAR (MAX) NOT NULL,
+    [Answer] NVARCHAR (MAX),
+    [ReadingTest_Id] INT NULL,
+    PRIMARY KEY CLUSTERED ([Question_Id] ASC), 
+    FOREIGN KEY ([ReadingTest_Id])
+        REFERENCES [dbo].[ReadingTest]
+        ON DELETE CASCADE
+)
 
-INSERT INTO [dbo].[LessonContent] ([Content],[Pinyin],[Translation],[Lesson_Id])
-VALUES (N'我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙 我 叫 孙','wo jiao sun','CH4',3);
+INSERT INTO [dbo].[QuestionTable] (
+    [Content],[FirstChoice],[SecondChoice],[ThirdChoice],[Answer],[ReadingTest_Id]
+) VALUES (N'他的名字是？','A. HAHA', 'B.HEHE', 'C.JAJA', 'A. HAHA', 1);
 
-SELECT * FROM LessonContent
+INSERT INTO [dbo].[QuestionTable] (
+    [Content],[FirstChoice],[SecondChoice],[ThirdChoice],[Answer],[ReadingTest_Id]
+) VALUES (N'他的名字是？',N'娜娜', N'咯与啊', N'地东坡撒', N'地东坡撒', 1);
+
+INSERT INTO [dbo].[QuestionTable] (
+    [Content],[FirstChoice],[SecondChoice],[ThirdChoice],[Answer],[ReadingTest_Id]
+) VALUES (N'他的名字是？',N'爱爸爸', N'啊妈妈', N'哎哟哟哟', N'啊妈妈', 1);
 
 
-INSERT INTO [dbo].[GrammarContent] ([SubHeading],[Content],[Grammar_Id])
-VALUES ('SH1','CT1',1);
 
-INSERT INTO [dbo].[GrammarContent] ([SubHeading],[Content],[Grammar_Id])
-VALUES ('SH2','CT2',2);
+SELECT * FROM ReadingTest
+SELECT * FROM QuestionTable
+
+CREATE TABLE [dbo].[ReadingTest] (
+    [ReadingTest_Id] INT IDENTITY (1,1) NOT NULL,
+    [TestText] NVARCHAR (MAX) NOT NULL,
+    Level_Id INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([ReadingTest_Id] ASC),
+    FOREIGN KEY([Level_Id])
+        REFERENCES [dbo].[LevelTable]
+        ON DELETE CASCADE
+)
+
+CREATE TABLE [dbo].[VocabularyWord] (
+    [VocabularyWord_Id] INT IDENTITY (1,1) NOT NULL,
+    [ChineseWord] NVARCHAR (MAX) NOT NULL,
+    [Pinyin] NVARCHAR (MAX) NOT NULL,
+    [EnglishText] NVARCHAR (MAX) NOT NULL,
+    Level_Id INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([VocabularyWord_Id] ASC),
+    FOREIGN KEY([Level_Id])
+        REFERENCES [dbo].[LevelTable]
+        ON DELETE CASCADE
+)
+
+CREATE TABLE [dbo].[Discussion] (
+    [Discussion_Id] INT IDENTITY (1,1) NOT NULL,
+    [Title] NVARCHAR (MAX) NOT NULL,
+    [Content] NVARCHAR (MAX) NOT NULL,
+    [Date_Created] NVARCHAR (MAX) NOT NULL,
+    [Status] NVARCHAR (40) NOT NULL,
+    [Member_Id] INT NULL,
+    PRIMARY KEY CLUSTERED ([Discussion_Id] ASC),
+    FOREIGN KEY([Member_Id])
+        REFERENCES [dbo].[MemberTable]
+        ON DELETE CASCADE
+)
+
+CREATE TABLE [dbo].[CommentTable] (
+    [Comment_Id] INT IDENTITY (1,1) NOT NULL,
+    [CommentText] NVARCHAR (MAX) NOT NULL,
+    [Date_Created] NVARCHAR (MAX) NOT NULL,
+    [Discussion_Id] INT NOT NULL,
+    [Member_Id] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Comment_Id] ASC),
+    FOREIGN KEY ([Discussion_Id])
+        REFERENCES [dbo].[Discussion]
+        ON DELETE CASCADE,
+    FOREIGN KEY ([Member_Id])
+        REFERENCES [dbo].[MemberTable]
+)
+
+SELECT * FROM ReadingTest
+
+INSERT INTO ReadingTest (TestText, Level_Id) VALUES (N'小明: 小红，你知道吗？最近我开始注重健康饮食了。
+
+小红: 真的吗？那你都吃些什么？',2)
+
 
 INSERT INTO [dbo].[GrammarTable] ([Chinese_Title],[English_Title],[Level_Id])
 VALUES ('Title2','Text2',1);
@@ -122,5 +192,7 @@ VALUES ('Lesson Level 1', 3);
 SELECT * FROM LessonTable
 
 SELECT * FROM LevelTable
+
+SELECT * FROM ReadingTest
 
 
