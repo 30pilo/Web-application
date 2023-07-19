@@ -41,9 +41,9 @@ namespace PolyglotHub
                 {
                     con.Open();
 
-                    string q1 = "UPDATE MemberTable SET LoginStatus = '"+ status +"' WHERE Member_Id = @lesson_Id";
+                    string q1 = "UPDATE MemberTable SET LoginStatus = '"+ status +"' WHERE Member_Id = @member_Id";
                     SqlCommand cmd1 = new SqlCommand(q1, con);
-                    cmd1.Parameters.AddWithValue("@lesson_Id", MID_TB.Text.Trim());
+                    cmd1.Parameters.AddWithValue("@member_Id", MID_TB.Text.Trim());
                     
                     int rowsAffected = cmd1.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -72,9 +72,9 @@ namespace PolyglotHub
                 {
                     con.Open();
 
-                    string q1 = "SELECT * FROM MemberTable WHERE Member_Id = @lesson_Id";
+                    string q1 = "SELECT * FROM MemberTable WHERE Member_Id = @member_Id";
                     SqlCommand cmd1 = new SqlCommand(q1, con);
-                    cmd1.Parameters.AddWithValue("@lesson_Id", MID_TB.Text.Trim());
+                    cmd1.Parameters.AddWithValue("@member_Id", MID_TB.Text.Trim());
                     SqlDataAdapter da = new SqlDataAdapter(cmd1);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -112,5 +112,32 @@ namespace PolyglotHub
             Country_TB.Text = "";
         }
 
+        protected void Button7_Click(object sender, EventArgs e) // Delete Member
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+
+                    string q1 = "DELETE FROM MemberTable WHERE Member_Id = @member_Id";
+                    SqlCommand cmd1 = new SqlCommand(q1, con);
+                    cmd1.Parameters.AddWithValue("@member_Id", MID_TB.Text.Trim());
+
+                    int rowsAffected = cmd1.ExecuteNonQuery();
+                    if(rowsAffected>0)
+                    {
+                        Response.Write("<script> alert('Member Deleted Successfully.'); </script>");
+                    } else
+                    {
+                        Response.Write("<script> alert('Failed To Delete Member.'); </script>");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script> alert('" + ex.Message + "'); </script>");
+            }
+        }
     }
 }

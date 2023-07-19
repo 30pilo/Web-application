@@ -38,7 +38,7 @@ namespace PolyglotHub
                     LinkButton4.Visible = false; // Login Button
                     LinkButton3.Visible = false; // Sign Up Button
 
-                    
+
                     LinkButton1.Visible = true; // Log Out
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
@@ -52,6 +52,38 @@ namespace PolyglotHub
                     LinkButton10.Visible = false; // Admin Member
                     LinkButton11.Visible = false; // Admin Test
                 }
+                else if (Session["role"].Equals("Member"))
+                {
+                    if (Session["status"].Equals("Disabled"))
+                    {
+                        Response.Write("<script> alert('Account Status is Disabled! " +
+                        "Contact Admin for further Assitance'); </script>");
+                    } else if(Session["role"].Equals("Member") && Session["status"].Equals("Pending"))
+                    {
+                        Response.Write("<script> alert('Account is Waiting for Activation! " +
+                        "Contact Admin for further Assitance'); </script>");
+                    }
+                    Session["username"] = "";
+                    Session["firstname"] = "";
+                    Session["lastname"] = "";
+                    Session["role"] = "";
+                    Session["status"] = "";
+
+                    LinkButton4.Visible = true; // Login Button
+                    LinkButton3.Visible = true; // Sign Up Button
+
+                    LinkButton12.Visible = false; // Grammar
+                    LinkButton6.Visible = false; // Sample Test
+                    LinkButton1.Visible = false; // Log Out
+                    LinkButton2.Visible = false; // Hello User
+                    LinkButton5.Visible = false; // Admin Level
+                    LinkButton7.Visible = false; // Admin Question
+                    LinkButton8.Visible = false; // Admin Vocab
+                    LinkButton9.Visible = false; // Admin Forum
+                    LinkButton10.Visible = false; // Admin Member
+                    LinkButton11.Visible = false; // Admin Test
+                }
+                
                 else if (Session["role"].Equals("Admin"))
                 {
                     LinkButton4.Visible = false; // Login Button
@@ -69,11 +101,7 @@ namespace PolyglotHub
                     LinkButton9.Visible = true; // Admin Forum
                     LinkButton10.Visible = true; // Admin Member
                     LinkButton11.Visible = true; // Admin Test
-                } else if (Session["role"].Equals("Member") && Session["status"].Equals("Inactive"))
-                {
-                    Response.Write("<script> alert('Account Status is Disabled! " +
-                        "Contact Admin for further Assitance'); </script>");
-                }
+                } 
             }
             catch (Exception ex)
             {
@@ -93,6 +121,8 @@ namespace PolyglotHub
             LinkButton4.Visible = true; // Login Button
             LinkButton3.Visible = true; // Sign Up Button
 
+            LinkButton12.Visible = false; // Grammar
+            LinkButton6.Visible = false; // Sample Test
             LinkButton1.Visible = false; // Log Out
             LinkButton2.Visible = false; // Hello User
             LinkButton5.Visible = false; // Admin Level
@@ -146,16 +176,9 @@ namespace PolyglotHub
             Response.Redirect("SignUpPage.aspx");
         }
 
-        bool checkIfUserLogIn()
+        protected void LinkButton6_Click(object sender, EventArgs e)
         {
-            if (Session["role"].Equals("Admin") || Session["role"].Equals("Member"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            Response.Redirect("SampleTestPage.aspx");
         }
     }
 }

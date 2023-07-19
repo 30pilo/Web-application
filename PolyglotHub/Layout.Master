@@ -57,17 +57,11 @@
                                 <li><a class="dropdown-item" href="Grammar_AdvancedPage">Advanced</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item active dropdown">
-                            <asp:LinkButton ID="LinkButton6" class="nav-link custom-links dropdown-toggle" 
-                                role="button" data-bs-hover="dropdown" runat="server" aria-expanded="false">
-                                Sample Test
+                        <li class="nav-item active">
+                            <asp:LinkButton ID="LinkButton6" class="nav-link custom-links" OnClick="LinkButton6_Click" 
+                                runat="server">
+                                Test Yourself
                             </asp:LinkButton>
-
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Beginner</a></li>
-                                <li><a class="dropdown-item" href="#">Intermediate</a></li>
-                                <li><a class="dropdown-item" href="#">Advanced</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link custom-links" href="#">More</a>

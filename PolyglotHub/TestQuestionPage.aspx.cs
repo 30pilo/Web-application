@@ -53,7 +53,6 @@ namespace PolyglotHub
                     int i = 1;
                     connection.Open();
                     
-                    Response.Write("<script> alert('"+ TID +"'); </script>");
                     using (SqlCommand command = new SqlCommand("SELECT * FROM QuestionTable WHERE ReadingTest_Id = '"+TID+"'", connection))
                     {
                         SqlCommand cmd = new SqlCommand("SELECT * FROM ReadingTest WHERE ReadingTest_Id = @TestId", connection);

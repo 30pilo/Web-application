@@ -18,6 +18,7 @@ CREATE TABLE [dbo].[MemberTable] (
     PRIMARY KEY CLUSTERED ([Member_Id] ASC)
 );
 
+SELECT * FROM MemberTable
 
 CREATE TABLE [dbo].[LevelTable] (
     [Level_Id] INT IDENTITY (1,1) NOT NULL,

@@ -136,7 +136,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group"> 
-                                        <asp:Button ID="Button7" runat="server" Text="Delete Permanently" class="btn btn-danger btn-block btn-md" />
+                                        <asp:Button ID="Button7" runat="server" Text="Delete Permanently" class="btn btn-danger btn-block btn-md" OnClick="Button7_Click" />
                                     </div>
                                 </div>
                             </div>
