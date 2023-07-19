@@ -18,7 +18,6 @@ CREATE TABLE [dbo].[MemberTable] (
     PRIMARY KEY CLUSTERED ([Member_Id] ASC)
 );
 
-SELECT * FROM MemberTable
 
 CREATE TABLE [dbo].[LevelTable] (
     [Level_Id] INT IDENTITY (1,1) NOT NULL,
@@ -138,6 +137,16 @@ CREATE TABLE [dbo].[VocabularyWord] (
         REFERENCES [dbo].[LevelTable]
         ON DELETE CASCADE
 )
+
+SELECT * FROM [dbo].[VocabularyWord]
+
+INSERT INTO [dbo].[VocabularyWord] (
+    [ChineseWord],[Pinyin],[EnglishText],[Level_Id] 
+) VALUES (N'爱','ài','love',1);
+
+INSERT INTO [dbo].[VocabularyWord] (
+    [ChineseWord],[Pinyin],[EnglishText],[Level_Id] 
+) VALUES (N'保安','bǎo ān','security guard; public security; ensure safety',3);
 
 CREATE TABLE [dbo].[Discussion] (
     [Discussion_Id] INT IDENTITY (1,1) NOT NULL,
