@@ -187,7 +187,6 @@
     <Content Include="AdminVocabularyManagement.aspx" />
     <Content Include="AdminTestManagement.aspx" />
     <Content Include="AdminQuestionManagement.aspx" />
-    <Content Include="VocabularyPage.aspx" />
     <Content Include="AdminLvlManage.aspx" />
     <Content Include="Grammar_BeginnerPage.aspx" />
     <Content Include="GrammarContent.aspx" />
@@ -199,6 +198,7 @@
     <Content Include="ForumPage.aspx" />
     <Content Include="AboutUsPage.aspx" />
     <Content Include="ContactUsPage.aspx" />
+    <Content Include="VocabularyPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -339,13 +339,6 @@
     <Compile Include="AdminQuestionManagement.aspx.designer.cs">
       <DependentUpon>AdminQuestionManagement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VocabularyPage.aspx.cs">
-      <DependentUpon>VocabularyPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VocabularyPage.aspx.designer.cs">
-      <DependentUpon>VocabularyPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AdminLvlManage.aspx.cs">
       <DependentUpon>AdminLvlManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +415,13 @@
     </Compile>
     <Compile Include="ContactUsPage.aspx.designer.cs">
       <DependentUpon>ContactUsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VocabularyPage.aspx.cs">
+      <DependentUpon>VocabularyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VocabularyPage.aspx.designer.cs">
+      <DependentUpon>VocabularyPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

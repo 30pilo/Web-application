@@ -15,7 +15,6 @@
                 <div class="row">
                     <div class="col">
                         <asp:Label ID="TextLabel" runat="server" Text="[Label]" class="header-text"></asp:Label>
-                        <asp:HiddenField ID="HiddenTestID" runat="server" />
                     </div>
                 </div>
             </div>
