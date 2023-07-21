@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Lesson_BeginnerPage.aspx.cs" Inherits="PolyglotHub.WebForm17" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Lesson_Intermediate.aspx.cs" Inherits="PolyglotHub.WebForm27" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .disp-div{

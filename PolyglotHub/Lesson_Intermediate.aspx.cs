@@ -12,7 +12,7 @@ using System.IO;
 
 namespace PolyglotHub
 {
-    public partial class WebForm17 : System.Web.UI.Page
+    public partial class WebForm27 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace PolyglotHub
                     {
                         connection.Open();
 
-                        using (SqlCommand command = new SqlCommand("SELECT * FROM LessonTable WHERE Level_Id = 1", connection))
+                        using (SqlCommand command = new SqlCommand("SELECT * FROM LessonTable WHERE Level_Id = 2", connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             {
@@ -63,7 +63,6 @@ namespace PolyglotHub
 
                                     var lineBreak = new HtmlGenericControl("br");
                                     card.Controls.Add(lineBreak);
-
 
                                     // Find the master page instance
                                     var masterPage = Page.Master as Layout;

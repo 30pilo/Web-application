@@ -29,7 +29,7 @@
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light custom-nav">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Default.aspx">
                     <img src="img/HeaderLogo.png" width="136" height="45"/>
                 </a>   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -64,7 +64,7 @@
                             </asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link custom-links" href="#">More</a>
+                            <a class="nav-link custom-links" href="SampleTestPage.aspx">More</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -96,11 +96,11 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <a class="footerlinks" href="#">About us</a>
-                            <a class="footerlinks" href="#">Vocabulary</a>
+                            <a class="footerlinks" href="AboutUsPage.aspx">About us</a>
+                            <a class="footerlinks" href="VocabularyPage.aspx">Vocabulary</a>
                             <asp:LinkButton class="footerlinks" ID="forumBtn" runat="server" OnClick="forumBtn_Click">Forum</asp:LinkButton>
                             &nbsp;
-                            <a class="footerlinks" href="#">Contact us</a>
+                            <a class="footerlinks" href="ContactUsPage">Contact us</a>
                             <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Content Management</asp:LinkButton>
                             &nbsp;
                             &nbsp;

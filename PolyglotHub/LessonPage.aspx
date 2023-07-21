@@ -72,19 +72,19 @@ main {
     <div class="step-box">
       <img src="img/intermediate.png" width="280" height="150">
     <div>
-      <button onclick="location.href='#URL'">Intermediate</button>
+      <a href="Lesson_Intermediate.aspx">Intermediate</a>
     </div>
          <p class="text">
-          　 Between two things in Begineer and Advanced
+          　 Somewhat Experience in Chinese
        </p>
     </div>
     <div class="step-box">
       <img src="img/advanced.png" width="280" height="150">
     <div>
-      <button onclick="location.href='./hoge.html'">Advanced</button>
+      <a href="Lesson_AdvancePage.aspx">Advanced</a>
     </div>
-         <p class="text">
-          　 Modern and recently developed
+        <p class="text">
+          　UptoDate knowledge and experience in Chinese
        </p>
     </div>
   </main>

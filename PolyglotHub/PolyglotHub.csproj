@@ -202,6 +202,8 @@
     <Content Include="newPost.aspx" />
     <Content Include="PostPage.aspx" />
     <Content Include="PostContent.aspx" />
+    <Content Include="Lesson_Intermediate.aspx" />
+    <Content Include="Lesson_AdvancePage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -446,6 +448,20 @@
     </Compile>
     <Compile Include="PostContent.aspx.designer.cs">
       <DependentUpon>PostContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson_Intermediate.aspx.cs">
+      <DependentUpon>Lesson_Intermediate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lesson_Intermediate.aspx.designer.cs">
+      <DependentUpon>Lesson_Intermediate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson_AdvancePage.aspx.cs">
+      <DependentUpon>Lesson_AdvancePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lesson_AdvancePage.aspx.designer.cs">
+      <DependentUpon>Lesson_AdvancePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

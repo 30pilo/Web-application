@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -9,10 +7,11 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
+using System;
 
 namespace PolyglotHub
 {
-    public partial class WebForm17 : System.Web.UI.Page
+    public partial class WebForm28 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +24,7 @@ namespace PolyglotHub
                     {
                         connection.Open();
 
-                        using (SqlCommand command = new SqlCommand("SELECT * FROM LessonTable WHERE Level_Id = 1", connection))
+                        using (SqlCommand command = new SqlCommand("SELECT * FROM LessonTable WHERE Level_Id = 3", connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             {
@@ -63,7 +62,6 @@ namespace PolyglotHub
 
                                     var lineBreak = new HtmlGenericControl("br");
                                     card.Controls.Add(lineBreak);
-
 
                                     // Find the master page instance
                                     var masterPage = Page.Master as Layout;

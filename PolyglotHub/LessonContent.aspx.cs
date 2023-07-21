@@ -60,14 +60,17 @@ namespace PolyglotHub
 
                                     var titleElement = new HtmlGenericControl("p");
                                     titleElement.InnerText = pinyin;
+                                    titleElement.Style["margin-left"] = "10px";
                                     card.Controls.Add(titleElement);
 
-                                    var textElement = new HtmlGenericControl("p");
+                                    var textElement = new HtmlGenericControl("h4");
                                     textElement.InnerText = chineseText;
+                                    textElement.Style["margin-left"] = "10px";
                                     card.Controls.Add(textElement);
 
                                     var textElement2 = new HtmlGenericControl("p");
                                     textElement2.InnerText = englishTranslate;
+                                    textElement2.Style["margin-left"] = "10px";
                                     card.Controls.Add(textElement2);
 
                                     // Find the master page instance
