@@ -3,13 +3,20 @@
 }
 
 .center {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
     text-align: center;
+    background-color: orange;
+    height:25%;
 }
+    .center h1 {
+        font-size: 44px;
+    }
 
-h1 {
-    font-size: 36px;
-    margin-top: 50px;
-}
+    .center h2 {
+        font-size: 40px;
+    }
 
 .forum-section {
     margin-top: 50px;
@@ -27,12 +34,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
     .box p {
+        margin-top: 15px;
         color: black;
-        font-size: 16px;
+        font-size: 19px;
     }
 
 

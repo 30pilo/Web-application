@@ -148,6 +148,8 @@ INSERT INTO [dbo].[VocabularyWord] (
     [ChineseWord],[Pinyin],[EnglishText],[Level_Id] 
 ) VALUES (N'保安','bǎo ān','security guard; public security; ensure safety',3);
 
+SELECT * FROM Discussion
+
 CREATE TABLE [dbo].[Discussion] (
     [Discussion_Id] INT IDENTITY (1,1) NOT NULL,
     [Title] NVARCHAR (MAX) NOT NULL,
@@ -208,3 +210,6 @@ SELECT * FROM ReadingTest
 
 
 SELECT * FROM GrammarTable
+
+
+SELECT * FROM Discussion

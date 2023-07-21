@@ -98,7 +98,8 @@
                         <p>
                             <a class="footerlinks" href="#">About us</a>
                             <a class="footerlinks" href="#">Vocabulary</a>
-                            <a class="footerlinks" href="#">Forum</a>
+                            <asp:LinkButton class="footerlinks" ID="forumBtn" runat="server" OnClick="forumBtn_Click">Forum</asp:LinkButton>
+                            &nbsp;
                             <a class="footerlinks" href="#">Contact us</a>
                             <asp:LinkButton class="footerlinks" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Content Management</asp:LinkButton>
                             &nbsp;

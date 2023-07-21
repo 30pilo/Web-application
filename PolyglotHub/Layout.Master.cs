@@ -22,6 +22,7 @@ namespace PolyglotHub
                     LinkButton4.Visible = true; // Login Button
                     LinkButton3.Visible = true; // Sign Up Button
 
+                    forumBtn.Visible = false; // user forum btn
                     LinkButton12.Visible = false; // Grammar
                     LinkButton6.Visible = false; // Sample Test
                     LinkButton1.Visible = false; // Log Out
@@ -43,6 +44,7 @@ namespace PolyglotHub
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
 
+                    forumBtn.Visible = true; // user forum btn
                     LinkButton12.Visible = true; // Grammar
                     LinkButton6.Visible = true; // Sample Test
                     LinkButton5.Visible = false; // Admin Level
@@ -63,6 +65,7 @@ namespace PolyglotHub
                         Response.Write("<script> alert('Account is Waiting for Activation! " +
                         "Contact Admin for further Assitance'); </script>");
                     }
+                    Session["MemberID"] = "";
                     Session["username"] = "";
                     Session["firstname"] = "";
                     Session["lastname"] = "";
@@ -71,7 +74,7 @@ namespace PolyglotHub
 
                     LinkButton4.Visible = true; // Login Button
                     LinkButton3.Visible = true; // Sign Up Button
-
+                    forumBtn.Visible = false; // user forum btn
                     LinkButton12.Visible = false; // Grammar
                     LinkButton6.Visible = false; // Sample Test
                     LinkButton1.Visible = false; // Log Out
@@ -111,6 +114,7 @@ namespace PolyglotHub
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            Session["MemberID"] = "";
             Session["username"] = "";
             Session["firstname"] = "";
             Session["lastname"] = "";
@@ -179,6 +183,11 @@ namespace PolyglotHub
         protected void LinkButton6_Click(object sender, EventArgs e)
         {
             Response.Redirect("SampleTestPage.aspx");
+        }
+
+        protected void forumBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumPage.aspx");
         }
     }
 }

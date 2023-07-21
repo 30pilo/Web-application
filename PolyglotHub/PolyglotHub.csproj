@@ -199,6 +199,9 @@
     <Content Include="AboutUsPage.aspx" />
     <Content Include="ContactUsPage.aspx" />
     <Content Include="VocabularyPage.aspx" />
+    <Content Include="newPost.aspx" />
+    <Content Include="PostPage.aspx" />
+    <Content Include="PostContent.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -422,6 +425,27 @@
     </Compile>
     <Compile Include="VocabularyPage.aspx.designer.cs">
       <DependentUpon>VocabularyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newPost.aspx.cs">
+      <DependentUpon>newPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newPost.aspx.designer.cs">
+      <DependentUpon>newPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostPage.aspx.cs">
+      <DependentUpon>PostPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostPage.aspx.designer.cs">
+      <DependentUpon>PostPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostContent.aspx.cs">
+      <DependentUpon>PostContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostContent.aspx.designer.cs">
+      <DependentUpon>PostContent.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
