@@ -1,9 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="AdminTestManagement.aspx.cs" Inherits="PolyglotHub.WebForm10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find
+                ("tr:first"))).dataTable();
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgview').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-5">
                 <br /> <br />
@@ -16,7 +35,7 @@
                                 <div class="col">
                                     <center>
                                         <h4 class="h1-login-card-text">
-                                            Test Details
+                                            Reading Test Details
                                         </h4>
                                     </center>
                                 </div>
@@ -25,7 +44,7 @@
                             <div class="row">
                                 <div class="col">
                                     <center>
-                                        <img src="img/profpic.png" width="100" />
+                                        <img src="img/readingicon.png" width="100" />
                                     </center>
                                 </div>
                             </div>
@@ -41,10 +60,9 @@
                                     <label>Test ID</label>
                                     <div class="form-group">
                                         <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="TextBox5" 
-                                            placeholder="ID here" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                        <asp:Button ID="Button10" class="btn btn-dark" runat="server" Text="Search" />
+                                        <asp:TextBox  class="form-control" ID="TSID" 
+                                            placeholder="ID here" runat="server" TextMode="Number"></asp:TextBox>
+                                        <asp:Button ID="SearchBtn" class="btn btn-dark" runat="server" Text="Search" OnClick="SearchBtn_Click" />
                                         </div>
                                         
                                     </div>
@@ -53,302 +71,46 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label>Title</label>
+                                    <label>Test Text</label>
                                     <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox3" 
-                                            placeholder="Test Title" runat="server">
-                                        </asp:TextBox>
+                                        <asp:TextBox  class="form-control" ID="TTLTB" 
+                                            placeholder="Text Here" runat="server" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [LevelTable]"></asp:SqlDataSource>
+                                    <asp:DropDownList ID="LevelList" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="Level_Id"></asp:DropDownList>
+                                </div>
+                            </div>
+                            <br />
 
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group"> 
-                                        <asp:Button ID="Button1" runat="server" Text="Add" class="btn btn-success btn-block btn-md" />
+                                        <asp:Button ID="AddBtn" runat="server" Text="Add" class="btn btn-success btn-block btn-md" OnClick="AddBtn_Click" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group"> 
-                                        <asp:Button ID="Button6" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
+                                        <asp:Button ID="updateBtn" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" OnClick="updateBtn_Click" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group"> 
-                                        <asp:Button ID="Button7" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
-                    </div>
-                </div>
-                
-                <br />
-                <!-- Test Level Add/Update/Delete -->
-                <div class="row-md-3">
-                    <div class="card">
-                        <div class="card-body">
-    
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <h4 class="h1-login-card-text">
-                                            Test Level Details
-                                        </h4>
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <img src="img/profpic.png" width="100" />
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <hr class="custom-hr" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Test Level ID</label>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="TextBox1" 
-                                            placeholder="ID here" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                        <asp:Button ID="Button2" class="btn btn-dark" runat="server" Text="Search" />
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Level Name</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox6" 
-                                            placeholder="Enter Level Name" runat="server">
-                                        </asp:TextBox>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label>Test ID</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox7" 
-                                            placeholder="Test ID to Add" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button4" runat="server" Text="Add" class="btn btn-success btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button5" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button11" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
-                    </div>
-                </div>
-                <br />
-
-
-                <!-- Test Reading Add/Update/Delete -->
-                <div class="row-md-3">
-                    <div class="card">
-                        <div class="card-body">
-    
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <h4 class="h1-login-card-text">
-                                            Test Reading Details
-                                        </h4>
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <img src="img/profpic.png" width="100" />
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <hr class="custom-hr" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Reading Story ID</label>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="TextBox2" 
-                                            placeholder="ID here" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                        <asp:Button ID="Button3" class="btn btn-dark" runat="server" Text="Search" />
-                                        </div>
-                                        
+                                        <asp:Button ID="deleteBtn" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" OnClick="deleteBtn_Click" />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <label>Reading Story Text</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox8" 
-                                            placeholder="Enter Text" runat="server" TextMode="MultiLine">
-                                        </asp:TextBox>
-                                    </div>
+                                    <a href="AdminQuestionManagement.aspx"><< Manage Questions Here >></a>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <label>Level ID</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox10" 
-                                            placeholder="Enter Story Level" runat="server" TextMode="Number"></asp:TextBox>
-                                    </div>
-                                </div>"
-                            </div>"
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button8" runat="server" Text="Add" class="btn btn-success btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button9" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button12" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
-                    </div>
-                </div>     
-                <br />
-
-                <!-- Test Listening Add/Update/Delete -->
-                <div class="row-md-3">
-                    <div class="card">
-                        <div class="card-body">
-    
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <h4 class="h1-login-card-text">
-                                            Test Listening Details
-                                        </h4>
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <img src="img/profpic.png" width="100" />
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <hr class="custom-hr" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Listening File ID</label>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="TextBox11" 
-                                            placeholder="ID here" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                        <asp:Button ID="Button13" class="btn btn-dark" runat="server" Text="Search" />
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Title</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox12" 
-                                            placeholder="Enter Text" runat="server">
-                                        </asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Title</label>
-                                    <div class="form-group">  
-                                        <asp:FileUpload class="form-control" ID="FileUpload1" runat="server" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Level ID</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox14" 
-                                            placeholder="Enter Listening Level" runat="server" TextMode="Number">
-                                        </asp:TextBox>
-                                    </div>
-                                </div>"
-                            </div>"
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button14" runat="server" Text="Add" class="btn btn-success btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button15" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="Button16" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" />
-                                    </div>
-                                </div>
-                            </div>
                         </div>     
                     </div>
                 </div>     
@@ -366,7 +128,7 @@
                                     <div class="col">
                                         <center>
                                             <h4 class="h1-login-card-text">
-                                                Test Table List
+                                                Test Table
                                             </h4>
                                         </center>
                                     </div>
@@ -380,8 +142,15 @@
 
                                 <div class="row">
                                     <div class="col">
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [ReadingTest]"></asp:SqlDataSource>
                                         <asp:GridView class="table table-striped table-bordered" 
-                                            ID="GridView1" runat="server"></asp:GridView>
+                                            ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ReadingTest_Id" DataSourceID="SqlDataSource2">
+                                            <Columns>
+                                                <asp:BoundField DataField="ReadingTest_Id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ReadingTest_Id" />
+                                                <asp:BoundField DataField="TestText" HeaderText="TestText" SortExpression="TestText" />
+                                                <asp:BoundField DataField="Level_Id" HeaderText="Level ID" SortExpression="Level_Id" />
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                             </div>

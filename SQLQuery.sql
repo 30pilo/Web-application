@@ -212,6 +212,8 @@ SELECT * FROM ReadingTest
 
 SELECT * FROM GrammarTable
 
+SELECT * FROM QuestionTable
+
 SELECT * FROM GrammarContent
 
 SELECT * FROM Discussion

@@ -164,6 +164,7 @@
     <Content Include="img\GrammarIcon.png" />
     <Content Include="img\intermediate.png" />
     <Content Include="img\profpic.png" />
+    <Content Include="img\readingicon.png" />
     <Content Include="img\UserProfileLessonHistoryIconnobg.png" />
     <Content Include="Layout.Master" />
     <Content Include="Default.aspx" />
