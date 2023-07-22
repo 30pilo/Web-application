@@ -21,6 +21,7 @@ namespace PolyglotHub
 
         private void clearInput()
         {
+            GCIDTB.Text = "";
             SHTB.Text = "";
             CTTB.Text = "";
             EXTB.Text = "";
