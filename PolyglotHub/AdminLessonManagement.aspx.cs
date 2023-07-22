@@ -108,20 +108,27 @@ namespace PolyglotHub
                         cmd1.Parameters.AddWithValue("@ChTitle", ChineseTitleTB.Text.Trim());
                         cmd1.Parameters.AddWithValue("@Level_id", getLevelId);
                         cmd1.Parameters.AddWithValue("@image", filepath);
-                        int rowsAffected = cmd1.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
+                        if(EnglishTitleTB.Text.Trim().Equals("") || ChineseTitleTB.Text.Trim().Equals(""))
                         {
-                            // Successful insertion
-                            Response.Write("<script> alert('Lesson added successfully.'); </script>");
-                            GridView1.DataBind();
-                        }
-                        else
+                            Response.Write("<script> alert('Please fill up all the input.'); </script>");
+                        } else
                         {
-                            // Failed to insert
-                            Response.Write("<script> alert('Failed to add Lesson.'); </script>");
-                        }
-                        clearInput();
+                            int rowsAffected = cmd1.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                // Successful insertion
+                                Response.Write("<script> alert('Lesson added successfully.'); </script>");
+                                GridView1.DataBind();
+                            }
+                            else
+                            {
+                                // Failed to insert
+                                Response.Write("<script> alert('Failed to add Lesson.'); </script>");
+                            }
+                            clearInput();
+                        }                  
                     }
                 } else
                 {

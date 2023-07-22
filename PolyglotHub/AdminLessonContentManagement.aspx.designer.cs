@@ -11,44 +11,53 @@ namespace PolyglotHub
 {
 
 
-    public partial class WebForm7
+    public partial class WebForm29
     {
 
         /// <summary>
-        /// GrammarIDTB control.
+        /// LessonContentIDTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GrammarIDTB;
+        protected global::System.Web.UI.WebControls.TextBox LessonContentIDTB;
 
         /// <summary>
-        /// SearchBtn control.
+        /// ContentIDSearchBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchBtn;
+        protected global::System.Web.UI.WebControls.Button ContentIDSearchBtn;
 
         /// <summary>
-        /// CNTB control.
+        /// ChineseTextTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CNTB;
+        protected global::System.Web.UI.WebControls.TextBox ChineseTextTB;
 
         /// <summary>
-        /// ENTB control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ENTB;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
+        /// TranslationTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TranslationTB;
 
         /// <summary>
         /// SqlDataSource2 control.
@@ -60,40 +69,40 @@ namespace PolyglotHub
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
-        /// LevelList control.
+        /// LessonIDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList LevelList;
+        protected global::System.Web.UI.WebControls.DropDownList LessonIDList;
 
         /// <summary>
-        /// AddBtn control.
+        /// ContentAddBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddBtn;
+        protected global::System.Web.UI.WebControls.Button ContentAddBtn;
 
         /// <summary>
-        /// UpdateBtn control.
+        /// ContentUpdateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UpdateBtn;
+        protected global::System.Web.UI.WebControls.Button ContentUpdateBtn;
 
         /// <summary>
-        /// DeleteBtn control.
+        /// ContentDeleteBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DeleteBtn;
+        protected global::System.Web.UI.WebControls.Button ContentDeleteBtn;
 
         /// <summary>
         /// SqlDataSource1 control.

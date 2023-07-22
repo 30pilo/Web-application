@@ -161,6 +161,7 @@
     <Content Include="img\advanced.png" />
     <Content Include="img\begineer.png" />
     <Content Include="img\bgimage.png" />
+    <Content Include="img\GrammarIcon.png" />
     <Content Include="img\intermediate.png" />
     <Content Include="img\profpic.png" />
     <Content Include="img\UserProfileLessonHistoryIconnobg.png" />
@@ -204,6 +205,8 @@
     <Content Include="PostContent.aspx" />
     <Content Include="Lesson_Intermediate.aspx" />
     <Content Include="Lesson_AdvancePage.aspx" />
+    <Content Include="AdminLessonContentManagement.aspx" />
+    <Content Include="AdminGrammarContentManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -462,6 +465,20 @@
     </Compile>
     <Compile Include="Lesson_AdvancePage.aspx.designer.cs">
       <DependentUpon>Lesson_AdvancePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLessonContentManagement.aspx.cs">
+      <DependentUpon>AdminLessonContentManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLessonContentManagement.aspx.designer.cs">
+      <DependentUpon>AdminLessonContentManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGrammarContentManagement.aspx.cs">
+      <DependentUpon>AdminGrammarContentManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGrammarContentManagement.aspx.designer.cs">
+      <DependentUpon>AdminGrammarContentManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

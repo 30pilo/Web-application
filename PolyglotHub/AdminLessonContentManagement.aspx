@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="AdminGrammarManagement.aspx.cs" Inherits="PolyglotHub.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="AdminLessonContentManagement.aspx.cs" Inherits="PolyglotHub.WebForm29" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <script type="text/javascript">
 
@@ -21,13 +21,11 @@
         </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <br /> <br />
-                <!-- Grammar Add/Update/Delete -->
-                <div class="row-md-4">
+                <br /><br />
+                <div class="row">
                     <div class="card">
                         <div class="card-body">
     
@@ -35,16 +33,8 @@
                                 <div class="col">
                                     <center>
                                         <h4 class="h1-login-card-text">
-                                            Grammar Details
+                                            Content Details
                                         </h4>
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <img src="img/GrammarIcon.png" width="100" />
                                     </center>
                                 </div>
                             </div>
@@ -57,12 +47,12 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label>Grammar ID</label>
+                                    <label>Lesson Content ID</label>
                                     <div class="form-group">
                                         <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="GrammarIDTB" 
+                                        <asp:TextBox  class="form-control" ID="LessonContentIDTB" 
                                             placeholder="ID here" runat="server" TextMode="Number"></asp:TextBox>
-                                        <asp:Button ID="SearchBtn" class="btn btn-dark" runat="server" Text="Search" OnClick="SearchBtn_Click" />
+                                        <asp:Button ID="ContentIDSearchBtn" class="btn btn-dark" runat="server" Text="Search" OnClick="ContentIDSearchBtn_Click" />
                                         </div>
                                         
                                     </div>
@@ -70,71 +60,82 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label>Chinese Title</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="CNTB" 
-                                            placeholder="Grammar Title [CN]" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label>English Title</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="ENTB" 
-                                            placeholder="Grammar Title [EN]" runat="server"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col">
-                                    <label>Level</label>
-                                    <div class="form-group">
-                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [LevelTable]"></asp:SqlDataSource>
-                                        <asp:DropDownList ID="LevelList" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Level_Id"></asp:DropDownList>
+                                    <label>Chinese Text</label>
+                                    <div class="form-group">  
+                                        <asp:TextBox  class="form-control" ID="ChineseTextTB" 
+                                            placeholder="Enter Chinese Text" runat="server" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="AddBtn" runat="server" Text="Add" class="btn btn-success btn-block btn-md" OnClick="AddBtn_Click" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="UpdateBtn" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" OnClick="UpdateBtn_Click" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="DeleteBtn" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" OnClick="DeleteBtn_Click" />
+                                <div class="col">
+                                    <label>Pinyin e.g. 你好 Nǐhǎo</label>
+                                    <div class="form-group">  
+                                        <asp:TextBox  class="form-control" ID="TextBox1" 
+                                            placeholder="Enter PinYin of Text" runat="server" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col">
-                                    <a href="AdminGrammarContentManagement.aspx"><< Create Content Here >></a>
+                                    <label>Translation</label>
+                                    <div class="form-group">  
+                                        <asp:TextBox  class="form-control" ID="TranslationTB" 
+                                            placeholder="Enter Translation of Text" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    </div>
                                 </div>
                             </div>
-                        </div>     
+
+                            <div class="row">
+                                <div class="col">
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [LessonTable]"></asp:SqlDataSource>
+                                    <label>Lesson ID</label>
+                                    <div class="form-group">  
+                                        <asp:DropDownList ID="LessonIDList" runat="server" DataSourceID="SqlDataSource2" DataTextField="Lesson_Id" DataValueField="Lesson_Id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group"> 
+                                        <asp:Button ID="ContentAddBtn" runat="server" Text="Add" class="btn btn-success btn-block btn-md" OnClick="ContentAddBtn_Click" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group"> 
+                                        <asp:Button ID="ContentUpdateBtn" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" OnClick="ContentUpdateBtn_Click" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group"> 
+                                        <asp:Button ID="ContentDeleteBtn" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" OnClick="ContentDeleteBtn_Click" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="AdminLessonManagement.aspx"><< Back to Lesson Management >></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
                     </div>
                 </div>
-                    
                 <br />
-            </div>   
-            
-            <!-- Grammar List -->
+            </div>
             <div class="col-md-7">
-                <br /><br />
+                <br />  
+                <br />
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
                                 <center>
                                     <h4 class="h1-login-card-text">
-                                        Grammar List
+                                        Lesson Content List
                                     </h4>
                                 </center>
                             </div>
@@ -147,24 +148,24 @@
                         </div>
 
                         <div class="row">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [LessonContent]"></asp:SqlDataSource>
                             <div class="col">
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [GrammarTable]"></asp:SqlDataSource>
                                 <asp:GridView class="table table-striped table-bordered" 
-                                    ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Grammar_Id" DataSourceID="SqlDataSource1">
+                                    ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="LessonContent_Id" DataSourceID="SqlDataSource1">
                                     <Columns>
-                                        <asp:BoundField DataField="Grammar_Id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="Grammar_Id" />
-                                        <asp:BoundField DataField="Chinese_Title" HeaderText="Chinese" SortExpression="Chinese_Title" />
-                                        <asp:BoundField DataField="English_Title" HeaderText="English" SortExpression="English_Title" />
-                                        <asp:BoundField DataField="Level_Id" HeaderText="Level ID" SortExpression="Level_Id" />
+                                        <asp:BoundField DataField="LessonContent_Id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="LessonContent_Id" />                                 
+                                        <asp:BoundField DataField="Content" HeaderText="Content" SortExpression="Content" />
+                                        <asp:BoundField DataField="Pinyin" HeaderText="Pinyin" SortExpression="Pinyin" />
+                                        <asp:BoundField DataField="Translation" HeaderText="Translation" SortExpression="Translation" />
+                                        <asp:BoundField DataField="Lesson_Id" HeaderText="LessonID" SortExpression="Lesson_Id" />
                                     </Columns>
                                 </asp:GridView>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
-
 </asp:Content>

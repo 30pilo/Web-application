@@ -28,7 +28,7 @@
             <div class="col-md-5">
                 <br /> <br />
                 <!-- Lesson Add/Update/Delete -->
-                <div class="row-md-4">
+                <div class="row">
                     <div class="card">
                         <div class="card-body">
     
@@ -91,7 +91,7 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label>Chinese Title</label>
+                                    <label>Chinese Word</label>
                                     <div class="form-group">  
                                         <asp:TextBox  class="form-control" ID="ChineseTitleTB" 
                                             placeholder="Lesson Title [CN]" runat="server"></asp:TextBox>
@@ -101,10 +101,10 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label>English Title</label>
+                                    <label>English Translation</label>
                                     <div class="form-group">  
                                         <asp:TextBox  class="form-control" ID="EnglishTitleTB" 
-                                            placeholder="Lesson Title [EN]" runat="server"></asp:TextBox>
+                                            placeholder=" [EN]" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -127,108 +127,15 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="row">
+                                <div class="col">
+                                    <a href="AdminLessonContentManagement.aspx"><< Add Lesson Content >></a> 
+                                </div>
+                            </div>
                         </div>     
                     </div>
                 </div>
-                
-                <br />
-
-                <!-- Lesson Content Add/Update/Delete -->
-                <div class="row-md-4">
-                    <div class="card">
-                        <div class="card-body">
-    
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                        <h4 class="h1-login-card-text">
-                                            Content Details
-                                        </h4>
-                                    </center>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <hr class="custom-hr" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Lesson Content ID</label>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <asp:TextBox  class="form-control" ID="LessonContentIDTB" 
-                                            placeholder="ID here" runat="server" TextMode="Number"></asp:TextBox>
-                                        <asp:Button ID="ContentIDSearchBtn" class="btn btn-dark" runat="server" Text="Search" />
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Chinese Text</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="ChineseTextTB" 
-                                            placeholder="Enter Chinese Text" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Pinyin e.g. 你好 Nǐhǎo</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TextBox1" 
-                                            placeholder="Enter PinYin of Text" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Translation</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="TranslationTB" 
-                                            placeholder="Enter Translation of Text" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label>Lesson ID</label>
-                                    <div class="form-group">  
-                                        <asp:TextBox  class="form-control" ID="ContentLessonIDTB" 
-                                            placeholder="Enter Content Lesson ID" runat="server" TextMode="Number"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="ContentAddBtn" runat="server" Text="Add" class="btn btn-success btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="ContentUpdateBtn" runat="server" Text="Update" class="btn btn-primary btn-block btn-md" />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group"> 
-                                        <asp:Button ID="ContentDeleteBtn" runat="server" Text="Delete" class="btn btn-danger btn-block btn-md" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>
-                </div>     
+                 
                 <br />
             </div>   
             
