@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -31,7 +32,19 @@ namespace PolyglotHub
                             GID = Convert.ToInt32(grammarId);
                         }
 
-                        using (SqlCommand command = new SqlCommand("SELECT SubHeading, Content FROM GrammarContent WHERE Grammar_Id = '"+ GID +"'", connection))
+                        string q1 = "SELECT * FROM GrammarTable Where Grammar_Id = @gId";
+                        SqlCommand cmd1 = new SqlCommand(q1, connection);
+                        cmd1.Parameters.AddWithValue("@gId", GID);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        if (dt.Rows.Count > 0)
+                        {
+                            ChineseTitle.Text = dt.Rows[0]["Chinese_Title"].ToString();
+                            EnglishTitle.Text = dt.Rows[0]["English_Title"].ToString();
+                        }
+
+                        using (SqlCommand command = new SqlCommand("SELECT * FROM GrammarContent WHERE Grammar_Id = '"+ GID +"'", connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             {
@@ -39,19 +52,31 @@ namespace PolyglotHub
                                 {
                                     string title = reader["SubHeading"].ToString();
                                     string text = reader["Content"].ToString();
+                                    string example = reader["Example"].ToString();
+                                    string[] exampleArray = example.Split(',');
 
                                     // Create a new card and populate it with the retrieved data
                                     var card = new HtmlGenericControl("div");
                                     card.Attributes.Add("class", "card");
-                                    card.Attributes.Add("style", "width:20em; margin:10px;");
+                                    card.Attributes.Add("style", "margin:10px;");
 
-                                    var titleElement = new HtmlGenericControl("h2");
+                                    var titleElement = new HtmlGenericControl("h3");
                                     titleElement.InnerText = title;
+                                    titleElement.Style["margin-left"] = "10px";
                                     card.Controls.Add(titleElement);
 
                                     var textElement = new HtmlGenericControl("p");
                                     textElement.InnerText = text;
+                                    textElement.Style["margin-left"] = "10px";
                                     card.Controls.Add(textElement);
+
+                                    for (int i = 0; i < exampleArray.Length; i++)
+                                    {
+                                        string format = $"{(i + 1)}. {exampleArray[i]}";
+                                        HtmlGenericControl p = new HtmlGenericControl("p");
+                                        p.InnerText = format;
+                                        card.Controls.Add(p);
+                                    }
 
                                     // Find the master page instance
                                     var masterPage = Page.Master as Layout;

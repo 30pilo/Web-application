@@ -22,10 +22,12 @@ namespace PolyglotHub
             {
                 try
                 {
+                    string level = Request.QueryString["level"];
+                    int levelID = Convert.ToInt32(level);
                     using (SqlConnection connection = new SqlConnection(strcon))
                     {
                         connection.Open();
-                        using (SqlCommand command = new SqlCommand("SELECT * FROM GrammarTable WHERE Level_Id = 1", connection))
+                        using (SqlCommand command = new SqlCommand("SELECT * FROM GrammarTable WHERE Level_Id = '"+ levelID + "'", connection))
                         {
                             using (SqlDataReader reader = command.ExecuteReader())
                             {

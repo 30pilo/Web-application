@@ -71,7 +71,7 @@ namespace PolyglotHub
                                     var textElement2 = new HtmlGenericControl("p");
                                     textElement2.InnerText = englishTranslate;
                                     textElement2.Style["margin-left"] = "10px";
-                                    card.Controls.Add(textElement2);
+                                    card.Controls.Add(textElement2);                                  
 
                                     // Find the master page instance
                                     var masterPage = Page.Master as Layout;

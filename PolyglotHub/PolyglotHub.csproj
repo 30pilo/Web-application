@@ -189,7 +189,7 @@
     <Content Include="AdminTestManagement.aspx" />
     <Content Include="AdminQuestionManagement.aspx" />
     <Content Include="AdminLvlManage.aspx" />
-    <Content Include="Grammar_BeginnerPage.aspx" />
+    <Content Include="GrammarPage.aspx" />
     <Content Include="GrammarContent.aspx" />
     <Content Include="LessonPage.aspx" />
     <Content Include="Lesson_BeginnerPage.aspx" />
@@ -354,12 +354,12 @@
     <Compile Include="AdminLvlManage.aspx.designer.cs">
       <DependentUpon>AdminLvlManage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Grammar_BeginnerPage.aspx.cs">
-      <DependentUpon>Grammar_BeginnerPage.aspx</DependentUpon>
+    <Compile Include="GrammarPage.aspx.cs">
+      <DependentUpon>GrammarPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Grammar_BeginnerPage.aspx.designer.cs">
-      <DependentUpon>Grammar_BeginnerPage.aspx</DependentUpon>
+    <Compile Include="GrammarPage.aspx.designer.cs">
+      <DependentUpon>GrammarPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="GrammarContent.aspx.cs">
       <DependentUpon>GrammarContent.aspx</DependentUpon>

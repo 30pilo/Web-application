@@ -77,6 +77,7 @@ CREATE TABLE [dbo].[GrammarContent] (
     [GrammarContent_Id] INT IDENTITY (1,1) NOT NULL,
     [SubHeading] NVARCHAR (MAX) NOT NULL,
     [Content] NVARCHAR (MAX) NOT NULL,
+    [Example] NVARCHAR (MAX) NOT NULL,
     [Grammar_Id] INT NOT NULL,
     PRIMARY KEY CLUSTERED ([GrammarContent_Id] ASC),
     FOREIGN KEY ([Grammar_Id])
@@ -211,5 +212,6 @@ SELECT * FROM ReadingTest
 
 SELECT * FROM GrammarTable
 
+SELECT * FROM GrammarContent
 
 SELECT * FROM Discussion

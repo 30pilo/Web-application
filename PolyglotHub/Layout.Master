@@ -52,9 +52,9 @@
                                 Grammar
                             </asp:LinkButton>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Grammar_BeginnerPage">Beginner</a></li>
-                                <li><a class="dropdown-item" href="Grammar_IntermediatePage">Intermediate</a></li>
-                                <li><a class="dropdown-item" href="Grammar_AdvancedPage">Advanced</a></li>
+                                <li><a class="dropdown-item" href="GrammarPage?level=1">Beginner</a></li>
+                                <li><a class="dropdown-item" href="GrammarPage?level=2">Intermediate</a></li>
+                                <li><a class="dropdown-item" href="GrammarPage?level=3">Advance</a></li>
                             </ul>
                         </li>
                         <li class="nav-item active">
