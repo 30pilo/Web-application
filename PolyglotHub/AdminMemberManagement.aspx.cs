@@ -127,6 +127,7 @@ namespace PolyglotHub
                     int rowsAffected = cmd1.ExecuteNonQuery();
                     if(rowsAffected>0)
                     {
+                        GridView1.DataBind();
                         Response.Write("<script> alert('Member Deleted Successfully.'); </script>");
                     } else
                     {

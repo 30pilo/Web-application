@@ -34,6 +34,7 @@ namespace PolyglotHub
                     bool isActive = isStatusActive();
                     CommentTB.Enabled = isActive;
                     SendBtn.Enabled = isActive;
+                    StatusLabel.Visible = !isActive;
                 }
                 else
                 {
@@ -54,7 +55,7 @@ namespace PolyglotHub
                 using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Discussion WHERE Discussion_Id = @discussionId"))
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Discussion WHERE Discussion_Id = @discussionId",con))
                     {
                         cmd.Parameters.AddWithValue("@discussionId", DID);
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))

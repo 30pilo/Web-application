@@ -3,7 +3,6 @@
     <style>
         main {
             width: 960px;
-            height: 960px;
             display: flex; 
             justify-content: center;
         }
@@ -15,7 +14,6 @@
             align-items: flex-start;
             margin-top: 50px;
             margin-bottom: 100px;
-            height: 200px;
         }
     </style>
 </asp:Content>

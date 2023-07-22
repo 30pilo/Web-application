@@ -21,7 +21,7 @@
 
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
   
-    
+ 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -62,9 +62,6 @@
                                 runat="server">
                                 Test Yourself
                             </asp:LinkButton>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link custom-links" href="SampleTestPage.aspx">More</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

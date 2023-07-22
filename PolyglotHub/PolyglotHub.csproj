@@ -208,6 +208,7 @@
     <Content Include="Lesson_AdvancePage.aspx" />
     <Content Include="AdminLessonContentManagement.aspx" />
     <Content Include="AdminGrammarContentManagement.aspx" />
+    <Content Include="AdminForumManagement.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -480,6 +481,13 @@
     </Compile>
     <Compile Include="AdminGrammarContentManagement.aspx.designer.cs">
       <DependentUpon>AdminGrammarContentManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForumManagement.aspx.cs">
+      <DependentUpon>AdminForumManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForumManagement.aspx.designer.cs">
+      <DependentUpon>AdminForumManagement.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -89,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+                    <asp:Label ID="StatusLabel" runat="server" Text="Discussion has been Disabled" ForeColor="#CC3300" Visible="False"></asp:Label>
                 </div>
             </div>
             <br />            

@@ -36,7 +36,7 @@ namespace PolyglotHub
                     da.Fill(dt);
                     int datasize = dt.Rows.Count;
 
-                    using (SqlCommand command = new SqlCommand("SELECT * FROM Discussion WHERE Status = 'Active'", connection))
+                    using (SqlCommand command = new SqlCommand("SELECT * FROM Discussion", connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
