@@ -64,7 +64,7 @@
                         <div class="container">
                             <div class="login-text-footer">
                                 <div style="flex:1">
-                                    <a href="Default.aspx">Forgot your password?</a>
+                                    <a href="forgetPassword.aspx">Forgot your password?</a>
                                 </div>
                                 <div>
                                     <a href="AdminLoginPage.aspx">Admin Login Here >></a>

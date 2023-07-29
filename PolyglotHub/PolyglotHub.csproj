@@ -213,6 +213,7 @@
     <Content Include="AdminGrammarContentManagement.aspx" />
     <Content Include="AdminForumManagement.aspx" />
     <Content Include="ReportViewPage.aspx" />
+    <Content Include="forgetPassword.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\HeaderLogo.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -499,6 +500,13 @@
     </Compile>
     <Compile Include="ReportViewPage.aspx.designer.cs">
       <DependentUpon>ReportViewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgetPassword.aspx.cs">
+      <DependentUpon>forgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgetPassword.aspx.designer.cs">
+      <DependentUpon>forgetPassword.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
