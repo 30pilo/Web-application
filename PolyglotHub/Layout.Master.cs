@@ -194,5 +194,10 @@ namespace PolyglotHub
         {
             Response.Redirect("ForumPage.aspx");
         }
+
+        protected void ReportBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReportViewPage.aspx");
+        }
     }
 }
