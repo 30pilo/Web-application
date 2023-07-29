@@ -162,11 +162,13 @@
     <Content Include="img\advanced.png" />
     <Content Include="img\begineer.png" />
     <Content Include="img\bgimage.png" />
+    <Content Include="img\discussIcon.png" />
     <Content Include="img\GrammarIcon.png" />
     <Content Include="img\intermediate.png" />
     <Content Include="img\profpic.png" />
     <Content Include="img\readingicon.png" />
     <Content Include="img\UserProfileLessonHistoryIconnobg.png" />
+    <Content Include="img\vocablogo.png" />
     <Content Include="Layout.Master" />
     <Content Include="Default.aspx" />
     <Content Include="Lesson_Img\Everyday Conversation Expressions.jpg" />

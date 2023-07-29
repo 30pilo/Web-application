@@ -29,7 +29,7 @@
                             <div class="row">
                                 <div class="col">
                                     <center>
-                                        <img src="img/profpic.png" width="100" />
+                                        <img src="img/discussIcon.png" width="100" />
                                     </center>
                                 </div>
                             </div>
