@@ -217,3 +217,8 @@ SELECT * FROM QuestionTable
 SELECT * FROM GrammarContent
 
 SELECT * FROM Discussion
+
+SELECT lt.Name AS levelName, COUNT(qt.Question_Id) AS QuestionCount FROM LevelTable lt
+JOIN ReadingTest rt ON lt.Level_Id = rt.Level_Id
+JOIN QuestionTable qt ON rt.ReadingTest_Id = qt.ReadingTest_Id
+GROUP BY lt.Name
