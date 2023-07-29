@@ -162,7 +162,7 @@ namespace PolyglotHub
 
         protected void LinkButton9_Click(object sender, EventArgs e) // Forum Management Page
         {
-            Response.Redirect("#");
+            Response.Redirect("AdminForumManagement.aspx");
         }
 
         protected void LinkButton10_Click(object sender, EventArgs e)

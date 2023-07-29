@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <br />
             <h1 class="contactus">Contact Us!</h1>
-            <p>We'd Love to Hear From You!</p>
+            <p class="firstText">We'd Love to Hear From You!</p>
             <p>・Email:Our Support Email is <u>poloyglothelp@hub.mail.com</u></p>
             <p>・Call:Emergency Call Contact through (60) 1882-9291 (Main Office, Kuala Lumpur, Malaysia)</p>
             <p>・Working Hours:9.00 - 12.00 a.m. & 13.00 - 18.00 p.m.(GMT+8); Monday - Friday</p>
