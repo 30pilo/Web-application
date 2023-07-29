@@ -22,6 +22,7 @@ namespace PolyglotHub
                     LinkButton4.Visible = true; // Login Button
                     LinkButton3.Visible = true; // Sign Up Button
 
+                    ReportBtn.Visible = false; // admin report btn
                     forumBtn.Visible = false; // user forum btn
                     LinkButton12.Visible = false; // Grammar
                     LinkButton6.Visible = false; // Sample Test
@@ -39,7 +40,7 @@ namespace PolyglotHub
                     LinkButton4.Visible = false; // Login Button
                     LinkButton3.Visible = false; // Sign Up Button
 
-
+                    ReportBtn.Visible = false; // admin report btn
                     LinkButton1.Visible = true; // Log Out
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello " + Session["firstname"].ToString() + " " + Session["lastname"].ToString();
@@ -72,6 +73,8 @@ namespace PolyglotHub
                     Session["role"] = "";
                     Session["status"] = "";
 
+
+                    ReportBtn.Visible = false; // admin report btn
                     LinkButton4.Visible = true; // Login Button
                     LinkButton3.Visible = true; // Sign Up Button
                     forumBtn.Visible = false; // user forum btn
@@ -96,6 +99,7 @@ namespace PolyglotHub
                     LinkButton2.Visible = true; // Hello User
                     LinkButton2.Text = "Hello Admin " + Session["username"].ToString();
 
+                    ReportBtn.Visible = true; // admin report btn
                     LinkButton12.Visible = true; // Grammar
                     LinkButton6.Visible = true; // Sample Test
                     LinkButton5.Visible = true; // Admin Level
@@ -125,6 +129,7 @@ namespace PolyglotHub
             LinkButton4.Visible = true; // Login Button
             LinkButton3.Visible = true; // Sign Up Button
 
+            ReportBtn.Visible = false; // admin report btn
             LinkButton12.Visible = false; // Grammar
             LinkButton6.Visible = false; // Sample Test
             LinkButton1.Visible = false; // Log Out
