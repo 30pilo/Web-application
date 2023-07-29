@@ -142,7 +142,6 @@ namespace PolyglotHub
             int WrongQ = 0;
 
             int size = questionList.Count();
-            Response.Write("<script> alert('" + size + "'); </script>");
 
             for (int i = 0; i < size; i++)
             {
@@ -154,7 +153,6 @@ namespace PolyglotHub
                 {
                     // Get the selected value from the RadioButtonList
                     string selectedValue = choiceList.SelectedValue;
-                    Response.Write("<script> alert('" + selectedValue + "'); </script>");
 
                     if (selectedValue.Equals(answerList[i]))
                     {
